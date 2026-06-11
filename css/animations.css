@@ -1,0 +1,77 @@
+/* Arkive Labs — motion
+   Keyframes + reveal classes. All motion respects prefers-reduced-motion. */
+
+@keyframes draw-stroke {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(0.85); opacity: 0.7; }
+}
+
+@keyframes scroll-tick {
+  0%      { transform: scaleY(0); transform-origin: top; }
+  40%     { transform: scaleY(1); transform-origin: top; }
+  60%     { transform: scaleY(1); transform-origin: bottom; }
+  100%    { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* ════════════════════════════════════════════════
+   REVEAL ON SCROLL
+   ════════════════════════════════════════════════ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+}
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 80ms; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 160ms; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 240ms; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 320ms; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 400ms; }
+
+
+/* Pause marquee on hover so a curious reader can read */
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-mark #heroPath { stroke-dashoffset: 0; animation: none; }
+  .hero-display .line,
+  .hero-eyebrow, .hero-lede, .hero-cta {
+    opacity: 1 !important; animation: none !important; transform: none !important;
+  }
+  .marquee-track { animation: none; transform: none; }
+  .status-dot { animation: none; }
+}

@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Python virtual env (used locally for PDF rendering only)
+.venv/
+__pycache__/
+
+# Claude Code local-only settings (machine-specific)
+.claude/
+
+# Brand-book page renders — regeneratable from the PDFs in repo root.
+# The source PDFs (Arkive Core.pdf, Arkive_Labs_AI_Context.pdf) are kept.
+Arkive_Core_page_*.png
+Arkive_Labs_AI_Context_page_*.png
+
+# Logs
+*.log
+npm-debug.log*

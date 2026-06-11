@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>Arkive Labs — One team. Every channel. No limits.</title>
+  <meta name="description" content="Arkive Labs is an AI-powered marketing and technology agency. Based in Sri Lanka, working globally. Built with purpose. Driven by impact.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Arkive Labs — One team. Every channel. No limits.">
+  <meta property="og:description" content="AI-powered marketing and technology for creators, founders, and growing brands.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arklabs.io">
+  <meta property="og:site_name" content="Arkive Labs">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts: Montserrat is the brand-locked face. No fallback to Inter (per brand rules). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Stylesheets — order matters: reset → tokens → base → components → layout → motion → responsive -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Arkive Labs",
+    "url": "https://arklabs.io",
+    "description": "AI-powered marketing and technology agency",
+    "foundingDate": "2025",
+    "founders": [
+      { "@type": "Person", "name": "Akesh Chandrasiri" },
+      { "@type": "Person", "name": "Yohan Wickramasinghe" }
+    ],
+    "address": { "@type": "PostalAddress", "addressCountry": "LK" },
+    "sameAs": [
+      "https://www.instagram.com/arkive_labs/",
+      "https://www.linkedin.com/company/117614171/"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Film grain overlay sits above everything except the cursor. -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor (JS hides on touch / coarse pointers) -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       NAV — editorial bar, topic-marker in corners
+       ════════════════════════════════════════════════ -->
+  <header class="nav" id="nav" aria-label="Main navigation">
+    <a href="#hero" class="nav-brand" aria-label="Arkive Labs — home">
+      <svg id="navMark" class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M 22 82 C 30 80 36 72 40 58 C 46 36 50 18 54 22 C 56 30 56 44 56 56 C 56 68 60 72 70 70 C 80 68 88 64 94 60"
+              fill="none" stroke="currentColor" stroke-width="3.2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Arkive</span>
+        <span class="brand-suffix">Labs</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#services" data-num="01">Services</a>
+      <a href="#approach" data-num="02">Approach</a>
+      <a href="#work" data-num="03">Work</a>
+      <a href="#about" data-num="04">About</a>
+      <a href="pricing.html" data-num="05">Pricing</a>
+    </nav>
+
+    <div class="nav-end">
+      <span class="nav-status" aria-label="Studio availability">
+        <span class="status-dot"></span>
+        Open for Q3 projects
+      </span>
+      <a href="#contact" class="btn btn-primary btn-sm">
+        Start a project
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Full-screen mobile overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-meta">
+      <span class="meta">Index — A/V 2.0</span>
+      <span class="meta">Colombo, LK</span>
+    </div>
+    <nav>
+      <a href="#services"><span class="m-num">01</span> Services</a>
+      <a href="#approach"><span class="m-num">02</span> Approach</a>
+      <a href="#work"><span class="m-num">03</span> Work</a>
+      <a href="#about"><span class="m-num">04</span> About</a>
+      <a href="pricing.html"><span class="m-num">05</span> Pricing</a>
+      <a href="#contact"><span class="m-num">06</span> Contact</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a href="mailto:hello@arklabs.io">hello@arklabs.io</a>
+      <div>
+        <a href="https://www.instagram.com/arkive_labs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/company/117614171/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ════════════════════════════════════════════════
+         00 — HERO
+         Canvas dot field reacts to cursor; the calligraphic
+         "A" draws on load; corner meta echoes the brand book.
+         ════════════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-labelledby="heroHeading">
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+      <!-- Editorial corner meta — borrowed straight from the brand book layout -->
+      <div class="hero-meta hero-meta-tl" aria-hidden="true">
+        <span class="meta-strong">Topic — 00</span>
+        <span>Index</span>
+      </div>
+      <div class="hero-meta hero-meta-tr" aria-hidden="true">
+        <span>arklabs.io</span>
+        <span>Version 2.0</span>
+      </div>
+      <div class="hero-meta hero-meta-bl" aria-hidden="true">
+        <span>Colombo, LK</span>
+        <span class="local-time" id="localTime">—</span>
+      </div>
+      <div class="hero-meta hero-meta-br" aria-hidden="true">
+        <span>AI Marketing &amp; Tech</span>
+        <span>Est. 2025</span>
+      </div>
+
+      <div class="container hero-body">
+        <svg class="hero-mark" id="heroMark" viewBox="0 0 100 100" aria-hidden="true">
+          <path id="heroPath"
+                d="M 22 82 C 30 80 36 72 40 58 C 46 36 50 18 54 22 C 56 30 56 44 56 56 C 56 68 60 72 70 70 C 80 68 88 64 94 60"
+                fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round"
+                pathLength="1"/>
+        </svg>
+
+        <p class="eyebrow hero-eyebrow">
+          <span class="bar"></span>
+          <span class="num">00</span>
+          One team. Every channel. No limits.
+        </p>
+
+        <h1 id="heroHeading" class="display hero-display">
+          <span class="line line-1">Marketing,</span>
+          <span class="line line-2">design &amp; tech</span>
+          <span class="line line-3">for builders<span class="dot">.</span></span>
+        </h1>
+
+        <p class="lede hero-lede">
+          Arkive Labs is an AI-powered marketing and technology agency for creators, founders, and growing brands. Two founders. Proprietary AI tooling. Agency-grade output at a fair price.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary" data-magnetic>
+            Start a project
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="#services" class="btn btn-ghost" data-magnetic>
+            See what we build
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════
+         Marquee — service ticker
+         ════════════════════════════════════════════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Marketing Strategy</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">Content</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">Design</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">AI &amp; Automation</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">Development</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">Compliance</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">Marketing Strategy</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">Content</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">Design</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">AI &amp; Automation</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">Development</span><span class="marquee-bullet">/</span>
+        <span class="marquee-item">Compliance</span><span class="marquee-bullet">/</span>
+      </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════
+         01 — MANIFESTO
+         ════════════════════════════════════════════════ -->
+    <section class="section manifesto" id="manifesto" aria-labelledby="manifestoHeading">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">
+            <span class="bar"></span>
+            <span class="num">01</span>
+            Manifesto
+          </p>
+          <span class="section-page meta">Page — 01</span>
+        </header>
+
+        <div class="manifesto-grid">
+          <h2 id="manifestoHeading" class="manifesto-statement">
+            Your ambition <em>deserves better</em> than a template.
+          </h2>
+
+          <div class="manifesto-body">
+            <p class="lede">
+              Most agencies sell a team of ten and deliver the work of two. We are two founders who deliver the work of ten.
+            </p>
+            <p>
+              We named the company after the Ark. A call to build with purpose, preserve what matters, and move forward with conviction regardless of the odds. AI is not our marketing angle. It is our infrastructure. Every output is strategised by humans, accelerated by proprietary tooling, and quality-checked before it leaves the studio.
+            </p>
+            <p class="text-dim">
+              No oversell. No shortcuts. Production-ready, every time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════
+         02 — SERVICES (interactive expanding list)
+         ════════════════════════════════════════════════ -->
+    <section class="section services" id="services" aria-labelledby="servicesHeading">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">
+            <span class="bar"></span>
+            <span class="num">02</span>
+            What we build
+          </p>
+          <span class="section-page meta">Page — 02</span>
+        </header>
+
+        <div class="services-intro">
+          <h2 id="servicesHeading">Full stack<br>for your brand.</h2>
+          <p class="lede">
+            Six pillars. One studio. Each one staffed by the same two minds, supported by the same AI infrastructure, held to the same standard.
+          </p>
+        </div>
+
+        <ul class="service-list" role="list">
+          <!-- 01 -->
+          <li class="service-row" data-service>
+            <button class="service-trigger" aria-expanded="false" aria-controls="svc-1">
+              <span class="service-num">01</span>
+              <span class="service-title">Marketing Strategy</span>
+              <span class="service-summary">Go-to-market, channels, campaigns, performance.</span>
+              <span class="service-toggle" aria-hidden="true">
+                <span class="bar h"></span><span class="bar v"></span>
+              </span>
+            </button>
+            <div class="service-detail" id="svc-1">
+              <div class="detail-grid">
+                <p class="detail-text">
+                  Audience research, positioning, channel architecture, and campaign planning grounded in your numbers, not a playbook. We design the system that turns attention into pipeline, then hand you the dashboard to run it.
+                </p>
+                <ul class="detail-list" role="list">
+                  <li>Campaign planning</li>
+                  <li>Content calendars</li>
+                  <li>Channel strategy</li>
+                  <li>Performance analysis</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- 02 -->
+          <li class="service-row" data-service>
+            <button class="service-trigger" aria-expanded="false" aria-controls="svc-2">
+              <span class="service-num">02</span>
+              <span class="service-title">Content Creation</span>
+              <span class="service-summary">Copy, social, email, ad creative.</span>
+              <span class="service-toggle" aria-hidden="true">
+                <span class="bar h"></span><span class="bar v"></span>
+              </span>
+            </button>
+            <div class="service-detail" id="svc-2">
+              <div class="detail-grid">
+                <p class="detail-text">
+                  Brand-voiced copy and content built around a clear strategy, not vibes. We write for conversion and authority, not for word count. Every piece is reviewed by a human, sharpened by AI, then shipped on schedule.
+                </p>
+                <ul class="detail-list" role="list">
+                  <li>Copywriting</li>
+                  <li>Social media content</li>
+                  <li>Email sequences</li>
+                  <li>Ad creative briefs</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- 03 -->
+          <li class="service-row" data-service>
+            <button class="service-trigger" aria-expanded="false" aria-controls="svc-3">
+              <span class="service-num">03</span>
+              <span class="service-title">Design &amp; Visual</span>
+              <span class="service-summary">Brand identity, UI, collateral, social.</span>
+              <span class="service-toggle" aria-hidden="true">
+                <span class="bar h"></span><span class="bar v"></span>
+              </span>
+            </button>
+            <div class="service-detail" id="svc-3">
+              <div class="detail-grid">
+                <p class="detail-text">
+                  Identity systems, marketing collateral, social templates, and product UI built with the same rigour you would expect from a studio four times our size. Every pixel ladders back to the brand.
+                </p>
+                <ul class="detail-list" role="list">
+                  <li>Brand identity</li>
+                  <li>Social graphics</li>
+                  <li>Marketing collateral</li>
+                  <li>UI mockups</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- 04 -->
+          <li class="service-row" data-service>
+            <button class="service-trigger" aria-expanded="false" aria-controls="svc-4">
+              <span class="service-num">04</span>
+              <span class="service-title">AI &amp; Automation</span>
+              <span class="service-summary">Custom tooling, agents, prompt chains.</span>
+              <span class="service-toggle" aria-hidden="true">
+                <span class="bar h"></span><span class="bar v"></span>
+              </span>
+            </button>
+            <div class="service-detail" id="svc-4">
+              <div class="detail-grid">
+                <p class="detail-text">
+                  Custom AI tools, prompt chains, and workflow automation that take the drudgery off your team. We build with Claude, OpenAI, and the right glue, then document the system so you own it after we leave.
+                </p>
+                <ul class="detail-list" role="list">
+                  <li>Custom AI tooling</li>
+                  <li>Workflow automation</li>
+                  <li>Prompt engineering</li>
+                  <li>Process optimisation</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- 05 -->
+          <li class="service-row" data-service>
+            <button class="service-trigger" aria-expanded="false" aria-controls="svc-5">
+              <span class="service-num">05</span>
+              <span class="service-title">Tech &amp; Development</span>
+              <span class="service-summary">Sites, landing pages, tool integrations.</span>
+              <span class="service-toggle" aria-hidden="true">
+                <span class="bar h"></span><span class="bar v"></span>
+              </span>
+            </button>
+            <div class="service-detail" id="svc-5">
+              <div class="detail-grid">
+                <p class="detail-text">
+                  Websites, landing pages, dashboards, and integrations shipped fast and built to last. React, Next.js, Tailwind, Supabase, and a healthy respect for vanilla HTML when it is the right call.
+                </p>
+                <ul class="detail-list" role="list">
+                  <li>Web builds</li>
+                  <li>Landing pages</li>
+                  <li>Vibe coding</li>
+                  <li>Tool integrations</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- 06 -->
+          <li class="service-row" data-service>
+            <button class="service-trigger" aria-expanded="false" aria-controls="svc-6">
+              <span class="service-num">06</span>
+              <span class="service-title">Compliance &amp; Ops</span>
+              <span class="service-summary">Cybersecurity advisory, data, process.</span>
+              <span class="service-toggle" aria-hidden="true">
+                <span class="bar h"></span><span class="bar v"></span>
+              </span>
+            </button>
+            <div class="service-detail" id="svc-6">
+              <div class="detail-grid">
+                <p class="detail-text">
+                  Cybersecurity advisory, data handling, internal process documentation, and partnerships. The quiet work that keeps the loud work safe.
+                </p>
+                <ul class="detail-list" role="list">
+                  <li>Cybersecurity advisory</li>
+                  <li>Data compliance</li>
+                  <li>Process documentation</li>
+                  <li>Partnerships</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════
+         03 — APPROACH (system diagram + 4 steps)
+         ════════════════════════════════════════════════ -->
+    <section class="section approach" id="approach" aria-labelledby="approachHeading">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">
+            <span class="bar"></span>
+            <span class="num">03</span>
+            How we work
+          </p>
+          <span class="section-page meta">Page — 03</span>
+        </header>
+
+        <div class="approach-grid">
+          <div class="approach-text">
+            <h2 id="approachHeading">AI-powered.<br>Human-led.</h2>
+            <p class="lede">
+              We use AI as infrastructure, not as a gimmick.
+            </p>
+            <p>
+              Every deliverable is strategised by a human, accelerated by proprietary tooling, and quality-checked before it ever reaches your inbox. The result is agency-level output from a two-person team, without the agency overhead.
+            </p>
+            <p class="text-dim">
+              Our internal stack: Claude, OpenAI, custom prompt chains, Notion, Supabase, Figma, the Adobe suite, and a few tools we built ourselves.
+            </p>
+          </div>
+
+          <!-- Editorial system diagram (replaces the orbit cliché).
+               Three columns of capability funneling into one Output stream. -->
+          <div class="system-diagram" aria-hidden="true">
+            <div class="diagram-header">
+              <span class="meta">Fig. 03.1 — Studio system</span>
+            </div>
+
+            <div class="diagram-grid">
+              <div class="diagram-col">
+                <span class="diagram-label">Input</span>
+                <ul>
+                  <li><span class="dot"></span>Brief</li>
+                  <li><span class="dot"></span>Research</li>
+                  <li><span class="dot"></span>Brand context</li>
+                </ul>
+              </div>
+
+              <div class="diagram-col">
+                <span class="diagram-label">Layer</span>
+                <ul>
+                  <li><span class="dot gold"></span>Human strategy</li>
+                  <li><span class="dot gold"></span>AI acceleration</li>
+                  <li><span class="dot gold"></span>Quality review</li>
+                </ul>
+              </div>
+
+              <div class="diagram-col">
+                <span class="diagram-label">Output</span>
+                <ul>
+                  <li><span class="dot"></span>Production-ready</li>
+                  <li><span class="dot"></span>Brand-consistent</li>
+                  <li><span class="dot"></span>Documented</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="diagram-foot">
+              <span class="meta">v2.0 / Last calibrated this week</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-strip">
+          <div class="process-step">
+            <span class="process-num">/ 01</span>
+            <h4>Discover</h4>
+            <p>We listen, research, and map the market position, the goals, and the real constraints.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-num">/ 02</span>
+            <h4>Define</h4>
+            <p>Strategy and scope are designed around your outcome, not our service menu.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-num">/ 03</span>
+            <h4>Deliver</h4>
+            <p>Rapid execution on AI-accelerated workflows. Reviewed by hand. Shipped on time.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-num">/ 04</span>
+            <h4>Elevate</h4>
+            <p>Ongoing refinement driven by real data, not a quarterly retainer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════
+         METRICS — narrow inset strip
+         ════════════════════════════════════════════════ -->
+    <section class="metrics-strip" aria-label="Studio at a glance">
+      <div class="container">
+        <div class="metrics-row">
+          <div class="metric">
+            <span class="metric-value" data-count="2">2</span>
+            <span class="metric-label">Founders</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">06</span>
+            <span class="metric-label">Service pillars</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">10×</span>
+            <span class="metric-label">Output per head</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">00</span>
+            <span class="metric-label">Shortcuts taken</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════
+         04 — SELECTED WORK (editorial placeholder)
+         ════════════════════════════════════════════════ -->
+    <section class="section work" id="work" aria-labelledby="workHeading">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">
+            <span class="bar"></span>
+            <span class="num">04</span>
+            Selected work
+          </p>
+          <span class="section-page meta">Page — 04</span>
+        </header>
+
+        <div class="work-intro">
+          <h2 id="workHeading">Built to show,<br>not to tell.</h2>
+          <p class="lede">
+            The studio is new. The case studies are in production. The first three projects ship before the end of the quarter.
+          </p>
+        </div>
+
+        <ul class="work-list" role="list">
+          <li class="work-item">
+            <div class="work-meta">
+              <span class="meta">Case 01 / In production</span>
+              <span class="meta">Brand &amp; identity</span>
+            </div>
+            <h3>A founder-led wellness brand</h3>
+            <p>Identity system, packaging, and a launch funnel for a regional skincare label going live in Q3.</p>
+            <span class="work-status">Coming soon</span>
+          </li>
+          <li class="work-item">
+            <div class="work-meta">
+              <span class="meta">Case 02 / In production</span>
+              <span class="meta">AI tooling</span>
+            </div>
+            <h3>An internal content engine</h3>
+            <p>A custom prompt-chain and workflow stack that took a B2B client from three campaigns a quarter to twelve.</p>
+            <span class="work-status">Coming soon</span>
+          </li>
+          <li class="work-item is-empty">
+            <div class="work-meta">
+              <span class="meta">Case 03 / Reserved</span>
+              <span class="meta">Your project</span>
+            </div>
+            <h3>The next one is yours.</h3>
+            <p>If your work belongs here, the conversation takes ten minutes. The estimate takes a day.</p>
+            <a href="#contact" class="btn btn-ghost btn-sm" data-magnetic>
+              Take the slot
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════
+         05 — ABOUT / FOUNDERS / VALUES
+         ════════════════════════════════════════════════ -->
+    <section class="section about" id="about" aria-labelledby="aboutHeading">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">
+            <span class="bar"></span>
+            <span class="num">05</span>
+            Who we are
+          </p>
+          <span class="section-page meta">Page — 05</span>
+        </header>
+
+        <div class="about-intro">
+          <h2 id="aboutHeading">Two founders.<br>Full stack.</h2>
+          <p class="lede">
+            Arkive Labs was founded in Sri Lanka by Akesh Chandrasiri and Yohan Wickramasinghe. The name draws from the story of Noah's Ark. A call to build with purpose, preserve what matters, and move forward with conviction regardless of the odds.
+          </p>
+        </div>
+
+        <div class="founders">
+          <article class="founder">
+            <div class="founder-meta">
+              <span class="meta">Co-founder / 01</span>
+              <span class="meta">Strategy &amp; AI Engineering</span>
+            </div>
+            <h3>Akesh Chandrasiri</h3>
+            <p>
+              Cybersecurity graduate. Leads client relationships, partnerships, AI engineering, and compliance advisory. Builds the internal tooling that makes the studio run at twice its weight.
+            </p>
+            <ul class="founder-skills" role="list">
+              <li>Strategy</li>
+              <li>AI Engineering</li>
+              <li>Compliance</li>
+              <li>Vibe coding</li>
+            </ul>
+          </article>
+
+          <article class="founder">
+            <div class="founder-meta">
+              <span class="meta">Co-founder / 02</span>
+              <span class="meta">Creative Direction</span>
+            </div>
+            <h3>Yohan Wickramasinghe</h3>
+            <p>
+              Software engineering undergrad. Leads all visual identity, content, and creative direction. Turns a positioning brief into a brand system that ships.
+            </p>
+            <ul class="founder-skills" role="list">
+              <li>Brand &amp; Identity</li>
+              <li>Graphic design</li>
+              <li>Content writing</li>
+              <li>Vibe coding</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="values">
+          <header class="values-head">
+            <p class="eyebrow">
+              <span class="bar"></span>
+              <span class="num">05.1</span>
+              Values
+            </p>
+            <h3>The four we will not compromise on.</h3>
+          </header>
+
+          <ol class="values-list" role="list">
+            <li class="value">
+              <span class="value-num">01</span>
+              <div class="value-body">
+                <h4>Integrity</h4>
+                <p>We say what we mean. No overselling. No shortcuts. No hidden costs.</p>
+              </div>
+            </li>
+            <li class="value">
+              <span class="value-num">02</span>
+              <div class="value-body">
+                <h4>Efficiency</h4>
+                <p>We respect time. Ours and yours. AI is how we deliver more with less waste.</p>
+              </div>
+            </li>
+            <li class="value">
+              <span class="value-num">03</span>
+              <div class="value-body">
+                <h4>Elevation</h4>
+                <p>Every output should raise your ceiling, not match the floor of the category.</p>
+              </div>
+            </li>
+            <li class="value">
+              <span class="value-num">04</span>
+              <div class="value-body">
+                <h4>Service</h4>
+                <p>We build for impact, not just revenue. Your win is the portfolio.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════
+         06 — CONTACT
+         ════════════════════════════════════════════════ -->
+    <section class="section contact" id="contact" aria-labelledby="contactHeading">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">
+            <span class="bar"></span>
+            <span class="num">06</span>
+            Get in touch
+          </p>
+          <span class="section-page meta">Page — 06</span>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-side">
+            <h2 id="contactHeading">Let's<br>build.</h2>
+            <p class="lede">
+              Clear vision or just a rough idea. Both are welcome. We will reply within one working day with either a scoped quote or a sharp question.
+            </p>
+
+            <dl class="contact-meta">
+              <div>
+                <dt class="caption">Studio</dt>
+                <dd>Colombo, Sri Lanka<br>Working with clients globally.</dd>
+              </div>
+              <div>
+                <dt class="caption">Email</dt>
+                <dd><a href="mailto:hello@arklabs.io">hello@arklabs.io</a></dd>
+              </div>
+              <div>
+                <dt class="caption">Social</dt>
+                <dd>
+                  <a href="https://www.instagram.com/arkive_labs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                  <span class="sep">/</span>
+                  <a href="https://www.linkedin.com/company/117614171/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/placeholder" method="POST" novalidate>
+            <div class="form-row">
+              <label for="name" class="caption">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name">
+            </div>
+
+            <div class="form-row">
+              <label for="email" class="caption">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@company.com">
+            </div>
+
+            <div class="form-row">
+              <label for="company" class="caption">Company <span class="text-dim">(optional)</span></label>
+              <input type="text" id="company" name="company" autocomplete="organization" placeholder="Your company">
+            </div>
+
+            <div class="form-row">
+              <label for="service" class="caption">What do you need?</label>
+              <select id="service" name="service">
+                <option value="" disabled selected>Pick a service</option>
+                <option>Marketing strategy</option>
+                <option>Content creation</option>
+                <option>Design &amp; visual</option>
+                <option>AI &amp; automation</option>
+                <option>Tech &amp; development</option>
+                <option>Compliance &amp; ops</option>
+                <option>A combination / not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="budget" class="caption">Budget range</label>
+              <select id="budget" name="budget">
+                <option value="" disabled selected>Pick a range</option>
+                <option>Under USD 5k</option>
+                <option>USD 5k–15k</option>
+                <option>USD 15k–50k</option>
+                <option>USD 50k+</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="message" class="caption">Tell us about the project</label>
+              <textarea id="message" name="message" rows="4" required placeholder="What are you building? What do you need help with?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" data-magnetic>
+              Send message
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </button>
+
+            <p class="form-fineprint caption text-dim">
+              We reply within one working day. No newsletter signup. No pitch deck spam.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════
+         CTA BANNER
+         ════════════════════════════════════════════════ -->
+    <section class="cta-banner" aria-label="Final call to action">
+      <div class="container cta-inner">
+        <p class="eyebrow">
+          <span class="bar"></span>
+          End — Ready
+        </p>
+        <h2 class="cta-headline">Ready to build<br>something real?</h2>
+        <p class="lede">No pitch decks. No long proposals. Just a conversation about what you need.</p>
+        <a href="#contact" class="btn btn-primary btn-lg" data-magnetic>
+          Start a project
+          <span class="arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ════════════════════════════════════════════════
+       FOOTER — editorial column system
+       ════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-brand footer-brand-link" aria-label="Arkive Labs — home">
+            <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M 22 82 C 30 80 36 72 40 58 C 46 36 50 18 54 22 C 56 30 56 44 56 56 C 56 68 60 72 70 70 C 80 68 88 64 94 60"
+                    fill="none" stroke="currentColor" stroke-width="3.2"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="brand-text">
+              <span class="brand-name">Arkive</span>
+              <span class="brand-suffix">Labs</span>
+            </span>
+          </a>
+          <p>One team. Every channel. No limits.<br>AI-powered marketing and technology for builders.</p>
+          <div class="footer-status">
+            <span class="status-dot"></span>
+            <span>Open for Q3 projects</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="caption">Navigate</h5>
+          <a href="#manifesto">Manifesto</a>
+          <a href="#services">Services</a>
+          <a href="#approach">Approach</a>
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="caption">Services</h5>
+          <a href="#services">Marketing Strategy</a>
+          <a href="#services">Content Creation</a>
+          <a href="#services">Design &amp; Visual</a>
+          <a href="#services">AI &amp; Automation</a>
+          <a href="#services">Tech &amp; Development</a>
+          <a href="#services">Compliance &amp; Ops</a>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="caption">Connect</h5>
+          <a href="mailto:hello@arklabs.io">hello@arklabs.io</a>
+          <a href="https://www.instagram.com/arkive_labs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.linkedin.com/company/117614171/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-rule"></div>
+
+      <div class="footer-bottom">
+        <p class="meta">&copy; <span id="year">2025</span> Arkive Labs. Colombo, LK. All rights reserved.</p>
+        <p class="meta">Brand A/V 2.0 / Built in-house</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll progress strip (filled by main.js) -->
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollProgressFill"></div></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

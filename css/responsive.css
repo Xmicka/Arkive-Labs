@@ -1,0 +1,105 @@
+/* Arkive Labs — responsive
+   Mobile-first overrides for layout breakpoints. */
+
+
+/* ── Tablet & below ── */
+@media (max-width: 960px) {
+  :root { --nav-h: 60px; }
+
+  /* NAV collapses to logo + burger. Switch to flex so hidden children
+     collapse cleanly and the menu toggle sits on the right. */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .nav-links { display: none; }
+  .nav-end { display: none; }
+  .menu-toggle { display: block; }
+
+  /* HERO meta — show only the diagonal pair */
+  .hero-meta-tr,
+  .hero-meta-bl { display: none; }
+  .hero-display { font-size: clamp(2.4rem, 11vw, 4.5rem); }
+
+  /* Stack two-column intros */
+  .manifesto-grid,
+  .services-intro,
+  .work-intro,
+  .about-intro,
+  .approach-grid,
+  .contact-grid,
+  .founders { grid-template-columns: 1fr; gap: 2rem; }
+
+  .footer-top { grid-template-columns: 1fr 1fr; }
+
+  /* Services rows collapse: num + title + toggle */
+  .service-trigger { grid-template-columns: 60px 1fr 32px; gap: 1.2rem; padding: 1.3rem 0; }
+  .service-summary { display: none; }
+  .service-row.is-open .detail-grid { grid-template-columns: 60px 1fr 32px; }
+  .detail-grid > .detail-text,
+  .detail-grid > .detail-list { grid-column: 2; }
+  .detail-grid > .detail-list { margin-top: 1rem; }
+
+  /* System diagram stacks */
+  .system-diagram { min-height: 0; }
+  .diagram-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+  .diagram-grid::before, .diagram-grid::after { display: none; }
+
+  /* Process strip 2x2 */
+  .process-strip { grid-template-columns: 1fr 1fr; }
+  .process-step { border-right: none; border-bottom: var(--rule-hair); padding: 1.4rem 0; }
+  .process-step:nth-child(2n) { padding-left: 1.4rem; border-left: var(--rule-hair); }
+  .process-step:nth-last-child(-n+1) { border-bottom: none; }
+
+  /* Metrics 2x2 */
+  .metrics-row { grid-template-columns: 1fr 1fr; }
+  .metric + .metric::before { display: none; }
+  .metric { padding: 1rem 0; border-top: var(--rule-hair); }
+  .metric:nth-child(-n+2) { border-top: none; }
+
+  /* Work item */
+  .work-item { grid-template-columns: 1fr; gap: 1rem; padding: 1.6rem 1.4rem; }
+  .work-status { align-self: start; }
+
+  /* Values */
+  .value { grid-template-columns: 50px 1fr; gap: 1.2rem; }
+  .value-num { font-size: 1.8rem; }
+
+  /* Footer */
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+
+/* ── Phone ── */
+@media (max-width: 600px) {
+  :root { --space-section: clamp(4rem, 14vw, 6rem); }
+
+  .nav { padding: 0.9rem var(--gutter); }
+  .brand-name { font-size: 0.85rem; }
+  .brand-suffix { font-size: 0.62rem; }
+
+  .hero-meta { font-size: 0.55rem; }
+  .hero-meta-tl { top: calc(var(--nav-h) + 0.5rem); }
+  .hero-meta-br { bottom: 1rem; }
+
+  .hero-display { font-size: clamp(2rem, 11vw, 3.6rem); }
+
+  .hero-cta .btn { font-size: 0.65rem; padding: 0.85rem 1.2rem; }
+
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom .meta { font-size: 0.55rem; }
+
+  .system-diagram { padding: 1.2rem; }
+
+  .service-trigger { grid-template-columns: 50px 1fr 24px; }
+  .service-title { font-size: 1.15rem; }
+}
+
+
+/* ── Hide custom cursor on touch / coarse pointers ── */
+@media (hover: none), (pointer: coarse) {
+  .cursor { display: none !important; }
+  body { cursor: auto; }
+}
