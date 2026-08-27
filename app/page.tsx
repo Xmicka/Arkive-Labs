@@ -289,7 +289,7 @@ export default function Home() {
         <div className="contact-bottom">
           <div className="contact-prompt">
             <p>Tell us what you are building, what is getting in the way and what needs to move next.</p>
-            <a href="https://arkive-pricing.foggy-melon-9291.chatgpt.site">View services and pricing <span aria-hidden="true">↗</span></a>
+            <a href="/pricing">View services and pricing <span aria-hidden="true">↗</span></a>
           </div>
           <a className="contact-button" href="/start-a-project">
             Start a conversation <Arrow />

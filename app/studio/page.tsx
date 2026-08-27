@@ -113,7 +113,7 @@ export default function StudioPage() {
         <h2>Bring us the substance.<br />We will make it <em>visible.</em></h2>
         <div className="studio-cta-bottom">
           <p>Tell us what you are building, what is getting in the way and what needs to move next.</p>
-          <div><a className="button button-outline-dark" href="https://arkive-pricing.foggy-melon-9291.chatgpt.site">View pricing <Arrow /></a><a className="contact-button" href="/start-a-project">Start a project <Arrow /></a></div>
+          <div><a className="button button-outline-dark" href="/pricing">View pricing <Arrow /></a><a className="contact-button" href="/start-a-project">Start a project <Arrow /></a></div>
         </div>
       </section>
 

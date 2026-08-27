@@ -167,7 +167,7 @@ export default function CapabilitiesPage() {
         <h2>Bring us the problem.<br />We will find the <em>leverage.</em></h2>
         <div className="cap-page-cta-bottom">
           <p>Start with the honest version of what is not moving. We will tell you what the challenge genuinely needs.</p>
-          <div><a className="button button-outline-dark" href="https://arkive-pricing.foggy-melon-9291.chatgpt.site">View pricing <Arrow /></a><a className="contact-button" href="/start-a-project">Start a project <Arrow /></a></div>
+          <div><a className="button button-outline-dark" href="/pricing">View pricing <Arrow /></a><a className="contact-button" href="/start-a-project">Start a project <Arrow /></a></div>
         </div>
       </section>
 
