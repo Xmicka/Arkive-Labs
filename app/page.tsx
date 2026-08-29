@@ -374,14 +374,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-
-      <footer data-nav-theme="dark">
-        <a className="brand footer-brand" href="#top">
-          <img className="brand-logo footer-logo" src="/brand/arkive-logo-white.png" alt="Arkive Labs" />
-        </a>
-        <p>Strategy · Creative · Technology · Performance</p>
-        <div><a href="#top">Back to top ↑</a><span>© 2026 Arkive Labs</span></div>
-      </footer>
     </main>
   );
 }

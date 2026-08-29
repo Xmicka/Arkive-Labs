@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import HeroField from "../HeroField";
 
 type Market = "sl" | "intl";
 type Price = {
@@ -365,6 +366,8 @@ export default function PricingClient() {
         data-nav-theme="dark"
         data-hero
       >
+        <HeroField />
+        <div className="pricing-hero-veil" aria-hidden="true" />
         <div className="pricing-grid" aria-hidden="true" />
 
         <div className="pricing-hero-copy">
@@ -385,9 +388,11 @@ export default function PricingClient() {
 
           <div
             className="market-control"
+            data-market={market}
             role="group"
             aria-label="Select pricing market"
           >
+            <span className="market-thumb" aria-hidden="true" />
             <button
               className={market === "sl" ? "active" : ""}
               onClick={() => setMarket("sl")}
@@ -411,15 +416,6 @@ export default function PricingClient() {
               ? "Sri Lankan Rupees (LKR)"
               : "US Dollars (USD)"}
           </p>
-        </div>
-
-        <div className="pricing-orbit" aria-hidden="true">
-          <div className="pricing-orbit-ring ring-a" />
-          <div className="pricing-orbit-ring ring-b" />
-
-          <div className="pricing-orbit-core">
-            <img src="/brand/arkive-mark-black.png" alt="" />
-          </div>
         </div>
 
         <div className="pricing-principles">
@@ -806,25 +802,6 @@ export default function PricingClient() {
           </a>
         </div>
       </section>
-
-      <footer data-nav-theme="dark">
-        <a className="brand footer-brand" href="/">
-          <img
-            className="brand-logo footer-logo"
-            src="/brand/arkive-logo-white.png"
-            alt="Arkive Labs"
-          />
-        </a>
-
-        <p>
-          Strategy · Creative · Technology · Performance
-        </p>
-
-        <div>
-          <a href="#top">Back to top ↑</a>
-          <span>© 2026 Arkive Labs</span>
-        </div>
-      </footer>
     </main>
   );
 }

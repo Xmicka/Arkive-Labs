@@ -168,12 +168,6 @@ export default function CapabilitiesPage() {
           <div><a className="button button-outline-dark" href="/pricing">View pricing <Arrow /></a><a className="contact-button" href="/start-a-project">Start a project <Arrow /></a></div>
         </div>
       </section>
-
-      <footer data-nav-theme="dark">
-        <a className="brand footer-brand" href="/"><img className="brand-logo footer-logo" src="/brand/arkive-logo-white.png" alt="Arkive Labs" /></a>
-        <p>Strategy · Creative · Technology · Performance</p>
-        <div><a href="#top">Back to top ↑</a><span>© 2026 Arkive Labs</span></div>
-      </footer>
     </main>
   );
 }

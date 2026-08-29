@@ -128,12 +128,6 @@ export default function StartProjectClient() {
           <article><span>03</span><h3>We shape the engagement.</h3><p>You receive a clear recommendation, scope, investment and next step with no vague agency theatre.</p></article>
         </div>
       </section>
-
-      <footer data-nav-theme="dark">
-        <a className="brand footer-brand" href="/"><img className="brand-logo footer-logo" src="/brand/arkive-logo-white.png" alt="Arkive Labs" /></a>
-        <p>Strategy · Creative · Technology · Performance</p>
-        <div><a href="#top">Back to top ↑</a><span>© 2026 Arkive Labs</span></div>
-      </footer>
     </main>
   );
 }

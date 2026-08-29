@@ -3,6 +3,7 @@ import "./globals.css";
 import Craft from "./Craft";
 import ScrollFX from "./ScrollFX";
 import Navigation from "./Navigation";
+import SiteFooter from "./SiteFooter";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://arkivelabs.com"),
@@ -85,6 +86,7 @@ export default function RootLayout({
         <ScrollFX />
         <Navigation />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
