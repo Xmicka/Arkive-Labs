@@ -63,7 +63,7 @@ export default function CapabilitiesPage() {
     <main className="capabilities-page">
       <Navigation page="capabilities" />
 
-      <section className="cap-page-hero" id="top" data-nav-theme="dark">
+      <section className="cap-page-hero" id="top" data-nav-theme="dark" data-hero>
         <div className="cap-page-hero-grid" aria-hidden="true" />
         <div className="cap-page-hero-copy">
           <p className="eyebrow">Capabilities <span>•</span> One connected system</p>

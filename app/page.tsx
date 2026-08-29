@@ -1,4 +1,6 @@
 import Navigation from "./Navigation";
+import HeroField from "./HeroField";
+import RotatingWord from "./RotatingWord";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -42,11 +44,14 @@ const process = [
 
 export default function Home() {
   return (
-    <main>
+    <main className="home">
       <Navigation />
 
-      <section className="hero" id="top" data-nav-theme="dark">
+      <section className="hero" id="top" data-nav-theme="dark" data-hero>
+        <HeroField />
+        <div className="hero-veil" aria-hidden="true" />
         <div className="hero-grid" aria-hidden="true" />
+
         <div className="hero-copy">
           <p className="eyebrow hero-eyebrow">
             Strategy <span>•</span> Creative <span>•</span> Technology <span>•</span> Performance
@@ -54,7 +59,9 @@ export default function Home() {
           <h1>
             The standard
             <br />
-            for the <em>bold.</em>
+            for the
+            <br />
+            <RotatingWord />
           </h1>
           <div className="hero-bottom">
             <p>
@@ -62,32 +69,25 @@ export default function Home() {
               strategy, creative, technology and performance that move as one.
             </p>
             <div className="hero-actions">
-              <a className="button button-gold" href="/start-a-project">
+              <a className="button button-gold" href="/start-a-project" data-magnetic>
                 Start a project <Arrow />
               </a>
-              <a className="button button-outline" href="#point-of-view">
+              <a className="button button-outline" href="#point-of-view" data-magnetic>
                 How we think <span aria-hidden="true">↓</span>
               </a>
             </div>
           </div>
         </div>
 
-        <div className="hero-signal" aria-hidden="true">
-          <div className="signal-label signal-label-two">BUILT TO MOVE</div>
-          <div className="signal-orbit orbit-one" />
-          <div className="signal-orbit orbit-two" />
-          <div className="signal-core">
-            <img src="/brand/arkive-mark-black.png" alt="" />
-          </div>
-          <span className="signal-dot dot-one" />
-          <span className="signal-dot dot-two" />
-          <span className="signal-dot dot-three" />
-        </div>
-
         <div className="hero-principles">
           <span>Research-first</span>
           <span>Founder-led</span>
           <span>Outcome-obsessed</span>
+        </div>
+
+        <div className="hero-scroll-cue" aria-hidden="true">
+          <span>Scroll</span>
+          <i />
         </div>
       </section>
 
@@ -123,6 +123,27 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="metrics" data-nav-theme="dark" aria-label="Arkive at a glance">
+        <div className="metrics-row">
+          <div className="metric">
+            <span className="metric-value">2</span>
+            <span className="metric-label">Accountable founders</span>
+          </div>
+          <div className="metric">
+            <span className="metric-value">04</span>
+            <span className="metric-label">Disciplines, one team</span>
+          </div>
+          <div className="metric">
+            <span className="metric-value">10<em>×</em></span>
+            <span className="metric-label">Output per head</span>
+          </div>
+          <div className="metric">
+            <span className="metric-value">00</span>
+            <span className="metric-label">Shortcuts taken</span>
+          </div>
+        </div>
+      </section>
+
       <section className="capabilities" id="capabilities" data-nav-theme="dark">
         <div className="section-heading dark-heading">
           <div className="section-index">
@@ -148,6 +169,65 @@ export default function Home() {
               <span className="capability-arrow" aria-hidden="true">↗</span>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="engine" data-nav-theme="dark">
+        <div className="engine-grid">
+          <div className="engine-lead">
+            <div className="section-index">
+              <span>02.1</span>
+              <p>How the work moves</p>
+            </div>
+            <h2>
+              AI is our <em>infrastructure.</em>
+              <br />
+              Not our angle.
+            </h2>
+            <p>
+              Every deliverable is strategised by a founder, accelerated by proprietary
+              tooling, and quality-checked before it leaves the studio. Agency-grade output
+              from a team you can actually reach.
+            </p>
+            <p>
+              Human judgement decides what matters. The machine removes the drag between the
+              idea and the result — so the thinking stays sharp and the delivery stays fast.
+            </p>
+          </div>
+
+          <div className="engine-diagram" aria-hidden="true">
+            <div className="engine-diagram-head">
+              <span>Fig. 02.1 — Studio system</span>
+              <span>v2026</span>
+            </div>
+            <div className="engine-cols">
+              <div className="engine-col">
+                <span>Input</span>
+                <ul>
+                  <li>Brief</li>
+                  <li>Research</li>
+                  <li>Brand context</li>
+                </ul>
+              </div>
+              <div className="engine-col is-core">
+                <span>Layer</span>
+                <ul>
+                  <li>Human strategy</li>
+                  <li>AI acceleration</li>
+                  <li>Quality review</li>
+                </ul>
+              </div>
+              <div className="engine-col">
+                <span>Output</span>
+                <ul>
+                  <li>Production-ready</li>
+                  <li>On brand</li>
+                  <li>Documented</li>
+                </ul>
+              </div>
+            </div>
+            <div className="engine-diagram-foot">Same two minds, from first question to final result.</div>
+          </div>
         </div>
       </section>
 

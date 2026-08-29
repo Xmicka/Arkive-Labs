@@ -365,6 +365,7 @@ export default function PricingClient() {
         className="pricing-hero"
         id="top"
         data-nav-theme="dark"
+        data-hero
       >
         <div className="pricing-grid" aria-hidden="true" />
 

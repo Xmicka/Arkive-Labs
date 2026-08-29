@@ -54,7 +54,7 @@ export default function StartProjectClient() {
     <main className="start-page">
       <Navigation page="start" />
 
-      <section className="start-hero" id="top" data-nav-theme="dark">
+      <section className="start-hero" id="top" data-nav-theme="dark" data-hero>
         <div className="start-grid" aria-hidden="true" />
         <div className="start-hero-copy">
           <p className="eyebrow">Start a project <span>•</span> Begin with the real challenge</p>

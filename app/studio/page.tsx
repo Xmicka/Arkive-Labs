@@ -21,7 +21,7 @@ export default function StudioPage() {
     <main className="studio-page">
       <Navigation page="studio" />
 
-      <section className="studio-hero" id="top" data-nav-theme="dark">
+      <section className="studio-hero" id="top" data-nav-theme="dark" data-hero>
         <div className="studio-hero-grid" aria-hidden="true" />
         <div className="studio-hero-copy">
           <p className="eyebrow">The studio <span>•</span> Founder-led by design</p>
