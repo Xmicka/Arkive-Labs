@@ -32,7 +32,7 @@ export default function RotatingWord() {
   }, []);
 
   return (
-    <em className={`rotating-word${shown ? " in" : " out"}`} aria-live="polite">
+    <em className={`rotating-word${shown ? " in" : " out"}`}>
       {WORDS[i]}
     </em>
   );

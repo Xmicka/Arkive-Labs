@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Craft from "./Craft";
 import ScrollFX from "./ScrollFX";
+import Navigation from "./Navigation";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://arkivelabs.com"),
@@ -36,8 +37,8 @@ export const metadata: Metadata = {
       "Strategy, creative, technology and performance that move as one.",
   },
   icons: {
-    icon: "/brand/arkive-mark-black.png",
-    shortcut: "/brand/arkive-mark-black.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
 };
 
@@ -82,6 +83,7 @@ export default function RootLayout({
       <body>
         <Craft />
         <ScrollFX />
+        <Navigation />
         {children}
       </body>
     </html>

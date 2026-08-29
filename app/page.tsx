@@ -1,4 +1,3 @@
-import Navigation from "./Navigation";
 import HeroField from "./HeroField";
 import RotatingWord from "./RotatingWord";
 
@@ -45,7 +44,6 @@ const process = [
 export default function Home() {
   return (
     <main className="home">
-      <Navigation />
 
       <section className="hero" id="top" data-nav-theme="dark" data-hero>
         <HeroField />
@@ -126,7 +124,7 @@ export default function Home() {
       <section className="metrics" data-nav-theme="dark" aria-label="Arkive at a glance">
         <div className="metrics-row">
           <div className="metric">
-            <span className="metric-value">2</span>
+            <span className="metric-value">02</span>
             <span className="metric-label">Accountable founders</span>
           </div>
           <div className="metric">

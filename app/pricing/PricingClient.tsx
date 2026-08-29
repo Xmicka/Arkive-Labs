@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Navigation from "../Navigation";
 
 type Market = "sl" | "intl";
 type Price = {
@@ -359,7 +358,6 @@ export default function PricingClient() {
 
   return (
     <main className="pricing-page">
-      <Navigation page="pricing" />
 
       <section
         className="pricing-hero"

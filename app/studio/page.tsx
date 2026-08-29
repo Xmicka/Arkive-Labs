@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navigation from "../Navigation";
 
 export const metadata: Metadata = {
   title: "Studio | Arkive Labs",
@@ -19,7 +18,6 @@ const operatingPrinciples = [
 export default function StudioPage() {
   return (
     <main className="studio-page">
-      <Navigation page="studio" />
 
       <section className="studio-hero" id="top" data-nav-theme="dark" data-hero>
         <div className="studio-hero-grid" aria-hidden="true" />

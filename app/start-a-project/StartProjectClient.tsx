@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import Navigation from "../Navigation";
 
 const enquiryEmail = "admin.arkivelabs@gmail.com";
 
@@ -52,7 +51,6 @@ export default function StartProjectClient() {
 
   return (
     <main className="start-page">
-      <Navigation page="start" />
 
       <section className="start-hero" id="top" data-nav-theme="dark" data-hero>
         <div className="start-grid" aria-hidden="true" />
@@ -125,9 +123,9 @@ export default function StartProjectClient() {
       <section className="what-next" data-nav-theme="dark">
         <div className="section-index"><span>02</span><p>What happens next</p></div>
         <div className="next-grid">
-          <article><span>01</span><h2>We read it properly.</h2><p>Your brief is reviewed by the founders, not filtered through a sales layer.</p></article>
-          <article><span>02</span><h2>We find the real question.</h2><p>If there is a fit, we arrange a focused conversation around the challenge and opportunity.</p></article>
-          <article><span>03</span><h2>We shape the engagement.</h2><p>You receive a clear recommendation, scope, investment and next step with no vague agency theatre.</p></article>
+          <article><span>01</span><h3>We read it properly.</h3><p>Your brief is reviewed by the founders, not filtered through a sales layer.</p></article>
+          <article><span>02</span><h3>We find the real question.</h3><p>If there is a fit, we arrange a focused conversation around the challenge and opportunity.</p></article>
+          <article><span>03</span><h3>We shape the engagement.</h3><p>You receive a clear recommendation, scope, investment and next step with no vague agency theatre.</p></article>
         </div>
       </section>
 

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navigation from "../Navigation";
 
 export const metadata: Metadata = {
   title: "Capabilities | Arkive Labs",
@@ -61,7 +60,6 @@ const pathways = [
 export default function CapabilitiesPage() {
   return (
     <main className="capabilities-page">
-      <Navigation page="capabilities" />
 
       <section className="cap-page-hero" id="top" data-nav-theme="dark" data-hero>
         <div className="cap-page-hero-grid" aria-hidden="true" />

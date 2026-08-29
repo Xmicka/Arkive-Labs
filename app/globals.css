@@ -1370,7 +1370,7 @@ footer > div { display: flex; justify-content: flex-end; gap: 30px; }
 .next-grid article + article { padding-left: 3vw; }
 .next-grid article:last-child { border-right: 0; }
 .next-grid article > span { color: var(--gold-bright); font-family: var(--font-serif); font-style: italic; }
-.next-grid h2 { margin: 80px 0 20px; font-size: clamp(1.75rem, 2.7vw, 3.1rem); line-height: 1.02; letter-spacing: -0.045em; }
+.next-grid h3 { margin: 80px 0 20px; font-size: clamp(1.75rem, 2.7vw, 3.1rem); line-height: 1.02; letter-spacing: -0.045em; }
 .next-grid p { max-width: 340px; margin: 0; color: #9b9c9f; font-size: 0.84rem; line-height: 1.6; }
 
 @media (max-width: 1000px) {
@@ -3035,12 +3035,30 @@ html.lenis, html.lenis body { height: auto; }
 /* slightly lighter, more editorial hero headline weight */
 .hero h1 { font-weight: 640; letter-spacing: -0.05em; }
 
-/* ---- Refined navigation (lighter, more air) ---- */
+/* ---- Refined navigation (transparent, always present) ---- */
 .site-header {
-  height: 74px;
-  background: rgba(9, 10, 12, 0.55);
-  border-bottom: 1px solid rgba(242, 240, 233, 0.08);
-  backdrop-filter: blur(20px) saturate(120%);
+  height: 72px;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: none;
+  transition: background 320ms ease, backdrop-filter 320ms ease,
+    border-color 320ms ease, color 320ms ease;
+}
+/* Stay see-through; the theme classes still drive text colour per section. */
+.nav-dark, .nav-light, .nav-gold { background: transparent; }
+/* Once scrolled, a whisper of scrim keeps it legible over any section. */
+.site-header.is-scrolled { backdrop-filter: blur(16px) saturate(118%); }
+.site-header.is-scrolled.nav-dark {
+  background: rgba(9, 10, 12, 0.52);
+  border-bottom-color: rgba(242, 240, 233, 0.07);
+}
+.site-header.is-scrolled.nav-light {
+  background: rgba(242, 240, 233, 0.74);
+  border-bottom-color: rgba(9, 10, 12, 0.07);
+}
+.site-header.is-scrolled.nav-gold {
+  background: rgba(208, 169, 79, 0.82);
+  border-bottom-color: rgba(9, 10, 12, 0.10);
 }
 .brand-logo { width: 132px; }
 .desktop-nav {
@@ -3096,3 +3114,102 @@ footer > div a:hover { color: var(--gold-bright); }
 
 /* count-up suffix (×) keeps gold */
 .metric-value em { font-style: normal; }
+
+/* ============================================================
+   ARKIVE — POLISH LAYER (production pass)
+   Alignment · weight · spacing · mobile · a11y. Wins the cascade.
+   ============================================================ */
+
+:root { --section-y: 118px; }
+
+/* ---- Weight: lift heavy 800s into the premium band ---- */
+.button, .brand, .header-cta, .contact-button, .form-submit button,
+.metric-value, .plan-type, .service-category, .market-control button,
+.pricing-jump-nav a {
+  font-weight: 700;
+}
+.system-kicker, .capability-tags span, .metric-label,
+.hero-principles span, .eyebrow {
+  font-weight: 600;
+}
+
+/* ---- Buttons: lighter, less chunky ---- */
+.button { min-height: 46px; gap: 12px; padding: 0 20px; }
+.button-outline { background: transparent; border-color: rgba(242, 240, 233, 0.28); }
+.contact-button { padding: 18px 24px; min-width: 0; }
+.form-submit button { min-height: 54px; }
+
+/* ---- Alignment: the engine band joins the common 4vw left rail ---- */
+.engine-grid { max-width: none; margin: 0; }
+
+/* ---- Consistent section rhythm (top/bottom), sides untouched ---- */
+.point-of-view, .capabilities, .systems, .approach,
+.studio, .accountability, .contact, .engine {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+}
+
+/* ---- Metrics: lighter proof strip ---- */
+.metric { padding: 44px 26px; }
+
+/* ---- CTA headlines: trim the oversized ceiling ---- */
+.contact h2, .cap-page-cta h2, .pricing-cta h2, .studio-cta h2 {
+  font-size: clamp(2.9rem, 6vw, 6.2rem);
+}
+
+/* ---- Cards: let content set height instead of ballooning ---- */
+.plan-card, .bundle-card { min-height: 600px; }
+.cap-discipline { min-height: 540px; }
+.outcome-line > div { min-height: 0; }
+.cap-pathway-grid article { min-height: 0; }
+.plan-card.featured, .bundle-card.featured { box-shadow: 0 16px 40px rgba(0, 0, 0, 0.13); }
+
+/* ---- Softer hairlines where they read heavy on light/gold ---- */
+.founders, .founder + .founder, .founder-profile-grid,
+.contact-prompt a, .studio-page-link {
+  border-color: rgba(9, 10, 12, 0.14);
+}
+
+/* ============ MOBILE / RESPONSIVE ============ */
+body { overflow-x: clip; }
+
+/* Gate hover-expansions behind real hover pointers — kills touch h-scroll */
+@media (hover: none), (pointer: coarse) {
+  .capability-row:hover, .project-row:hover, .addon-row:hover {
+    margin: 0; padding-left: 0; padding-right: 0; background: transparent;
+  }
+  .button:hover, .contact-button:hover { transform: none; }
+}
+
+/* Header stays 72px on mobile; sticky jump-nav offset matches */
+.pricing-jump-nav { top: 72px; }
+@media (max-width: 900px) {
+  .site-header { height: 72px; }
+  .pricing-jump-nav { top: 72px; }
+  .hero-veil {
+    background:
+      linear-gradient(to top, var(--ink) 6%, rgba(9, 10, 12, 0.72) 46%, rgba(9, 10, 12, 0.2) 100%);
+  }
+}
+
+/* Hero headings scale properly on phones (no clipping of long words) */
+@media (max-width: 560px) {
+  .hero h1 { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .hero-principles {
+    position: static; margin-top: 42px; padding: 0; border-top: 0;
+    grid-template-columns: 1fr 1fr; gap: 18px 12px;
+  }
+  .hero-principles span { padding: 0; }
+  .hero-principles span:nth-child(3) { display: block; }
+  .contact-topline { flex-direction: column; gap: 8px; }
+}
+@media (max-width: 380px) { .hero h1 { font-size: 2.35rem; } }
+
+/* Sibling page heroes: same viewport-scaled clamp pattern */
+.start-hero h1 { font-size: clamp(2.7rem, 13vw, 4rem); }
+.studio-hero h1, .cap-page-hero h1 { font-size: clamp(2.6rem, 12.5vw, 3.85rem); }
+
+/* Comfortable tap targets + contained mobile-nav decoration */
+.mobile-menu-toggle { min-height: 46px; }
+.mobile-navigation { overflow-x: clip; }
+footer > div a { display: inline-flex; align-items: center; min-height: 40px; }
