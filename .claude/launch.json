@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "arkive-next",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "4400"],
+      "port": 4400
+    }
+  ]
+}
