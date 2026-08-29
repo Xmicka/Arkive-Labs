@@ -2784,23 +2784,34 @@ h1 em, h2 em, h3 em,
   transform: translate(-50%, -50%);
   will-change: transform;
 }
+/* Gold core — the true pointer. Brand-coloured, with a soft glow. */
 .cursor-dot {
-  width: 7px; height: 7px;
-  margin: -3.5px 0 0 -3.5px;
+  width: 6px; height: 6px;
+  margin: -3px 0 0 -3px;
   background: var(--gold-bright);
+  box-shadow: 0 0 10px 1px rgba(224, 189, 103, 0.9);
+  transition: width 240ms ease, height 240ms ease, margin 240ms ease;
 }
+/* Liquid ring — difference-blended so it inverts over any section and stays
+   visible; the JS loop stretches it into a droplet along the movement. */
 .cursor-ring {
-  width: 34px; height: 34px;
-  margin: -17px 0 0 -17px;
-  border: 1px solid rgba(208, 169, 79, 0.6);
-  transition: width 220ms ease, height 220ms ease, margin 220ms ease,
-    background 220ms ease, border-color 220ms ease;
+  width: 42px; height: 42px;
+  margin: -21px 0 0 -21px;
+  border: 1.4px solid #ffffff;
+  mix-blend-mode: difference;
+  transition: width 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    margin 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 240ms ease;
 }
 .cursor-hover .cursor-ring {
-  width: 54px; height: 54px;
-  margin: -27px 0 0 -27px;
-  background: rgba(208, 169, 79, 0.10);
-  border-color: var(--gold-bright);
+  width: 66px; height: 66px;
+  margin: -33px 0 0 -33px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.cursor-hover .cursor-dot {
+  width: 3px; height: 3px;
+  margin: -1.5px 0 0 -1.5px;
 }
 
 /* ---------- Film grain ---------- */

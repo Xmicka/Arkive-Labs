@@ -52,13 +52,31 @@ export default function Craft() {
       let my = window.innerHeight / 2;
       let rx = mx;
       let ry = my;
+      let prevRx = rx;
+      let prevRy = ry;
+      let angle = 0;
       let raf = 0;
 
       const loop = () => {
-        rx += (mx - rx) * 0.18;
-        ry += (my - ry) * 0.18;
+        // Ring trails the pointer, then deforms along its own velocity —
+        // a still circle that stretches into a gold droplet as you move.
+        rx += (mx - rx) * 0.2;
+        ry += (my - ry) * 0.2;
+        const vx = rx - prevRx;
+        const vy = ry - prevRy;
+        prevRx = rx;
+        prevRy = ry;
+        const speed = Math.hypot(vx, vy);
+        if (speed > 0.6) angle = Math.atan2(vy, vx);
+        const stretch = Math.min(speed / 22, 0.5);
+        const sx = 1 + stretch;
+        const sy = 1 - stretch * 0.62;
+
         if (dot) dot.style.transform = `translate(${mx}px, ${my}px)`;
-        if (ring) ring.style.transform = `translate(${rx}px, ${ry}px)`;
+        if (ring) {
+          ring.style.transform =
+            `translate(${rx}px, ${ry}px) rotate(${angle}rad) scale(${sx}, ${sy})`;
+        }
         raf = requestAnimationFrame(loop);
       };
       loop();
