@@ -31,10 +31,11 @@ export default function SiteFooter() {
             <a href="/packages">Packages</a>
           </div>
           <div className="footer-col">
-            <span className="footer-col-head">Studio</span>
+            <span className="footer-col-head">Contact</span>
             <a href="mailto:info@arkivelabs.com">info@arkivelabs.com</a>
-            <span>Colombo, Sri Lanka</span>
-            <span>Working worldwide</span>
+            <a href="mailto:akesh@arkivelabs.com">akesh@arkivelabs.com</a>
+            <a href="mailto:yohan@arkivelabs.com">yohan@arkivelabs.com</a>
+            <span>Colombo, Sri Lanka · Worldwide</span>
           </div>
           <div className="footer-col">
             <span className="footer-col-head">Follow</span>
