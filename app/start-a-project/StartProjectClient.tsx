@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-const enquiryEmail = "admin.arkivelabs@gmail.com";
+const enquiryEmail = "info@arkivelabs.com";
 
 const supportOptions = [
   "Strategy & positioning",

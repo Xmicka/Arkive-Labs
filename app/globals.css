@@ -3539,3 +3539,17 @@ footer > div a { display: inline-flex; align-items: center; min-height: 40px; }
   .focused-item, .focused-item:nth-child(odd) { border-right: 0; padding: 26px 0; }
   .focused-item:nth-child(even) { padding-left: 0; }
 }
+
+/* Founder email links on the studio page */
+.founder-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--gold-bright);
+  transition: color 180ms ease;
+}
+.founder-email:hover { color: var(--paper); }

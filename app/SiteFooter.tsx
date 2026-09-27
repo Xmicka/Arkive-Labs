@@ -32,9 +32,7 @@ export default function SiteFooter() {
           </div>
           <div className="footer-col">
             <span className="footer-col-head">Studio</span>
-            <a href="mailto:admin.arkivelabs@gmail.com">
-              admin.arkivelabs@gmail.com
-            </a>
+            <a href="mailto:info@arkivelabs.com">info@arkivelabs.com</a>
             <span>Colombo, Sri Lanka</span>
             <span>Working worldwide</span>
           </div>

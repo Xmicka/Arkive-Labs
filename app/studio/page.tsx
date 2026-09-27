@@ -65,6 +65,7 @@ export default function StudioPage() {
             <div className="founder-profile-copy">
               <div><p>Co-Founder</p><h3>Yohan Wickramasinghe</h3><strong>Strategy & Creative</strong></div>
               <p>Shapes the position, story and creative system behind how Arkive and its partners show up. His focus is turning business substance into a market presence people can understand, recognise and trust.</p>
+              <a className="founder-email" href="mailto:yohan@arkivelabs.com">yohan@arkivelabs.com <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article className="founder-profile">
@@ -72,6 +73,7 @@ export default function StudioPage() {
             <div className="founder-profile-copy">
               <div><p>Co-Founder</p><h3>Akesh Chandrasiri</h3><strong>AI Engineering & Compliance</strong></div>
               <p>Connects applied AI, responsible technology and operational thinking to what the work can become. His focus is building systems that are useful, considered and ready for the realities behind the idea.</p>
+              <a className="founder-email" href="mailto:akesh@arkivelabs.com">akesh@arkivelabs.com <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         </div>
