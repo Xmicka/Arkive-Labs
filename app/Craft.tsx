@@ -42,39 +42,9 @@ export default function Craft() {
       });
     }
 
-    // ---- Custom cursor + magnetic (fine pointers only) ----
+    // ---- Magnetic buttons (fine pointers only) ----
+    // Uses the native system cursor — reliable and familiar for clicking.
     if (fine && !reduce) {
-      document.body.classList.add("has-custom-cursor");
-      const arrow = document.querySelector<HTMLElement>(".cursor-arrow");
-
-      // Track the true pointer exactly — the arrow tip sits where clicks land.
-      const onMove = (e: PointerEvent) => {
-        if (arrow) {
-          arrow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-          if (!arrow.classList.contains("is-ready"))
-            arrow.classList.add("is-ready");
-        }
-      };
-      window.addEventListener("pointermove", onMove, { passive: true });
-
-      const onDown = () => document.body.classList.add("cursor-down");
-      const onUp = () => document.body.classList.remove("cursor-down");
-      window.addEventListener("pointerdown", onDown);
-      window.addEventListener("pointerup", onUp);
-
-      const interactive = 'a, button, [data-magnetic], input, textarea, select, [role="button"]';
-      const onOver = (e: Event) => {
-        if ((e.target as HTMLElement)?.closest?.(interactive))
-          document.body.classList.add("cursor-hover");
-      };
-      const onOut = (e: Event) => {
-        if ((e.target as HTMLElement)?.closest?.(interactive))
-          document.body.classList.remove("cursor-hover");
-      };
-      document.addEventListener("pointerover", onOver);
-      document.addEventListener("pointerout", onOut);
-
-      // Magnetic pull
       const magnets = Array.from(
         document.querySelectorAll<HTMLElement>("[data-magnetic]"),
       );
@@ -84,7 +54,7 @@ export default function Craft() {
           const r = el.getBoundingClientRect();
           const x = e.clientX - (r.left + r.width / 2);
           const y = e.clientY - (r.top + r.height / 2);
-          el.style.transform = `translate(${x * 0.28}px, ${y * 0.28}px)`;
+          el.style.transform = `translate(${x * 0.22}px, ${y * 0.22}px)`;
         };
         const reset = () => {
           el.style.transform = "";
@@ -98,16 +68,6 @@ export default function Craft() {
       });
 
       cleanups.push(() => {
-        document.body.classList.remove(
-          "has-custom-cursor",
-          "cursor-hover",
-          "cursor-down",
-        );
-        window.removeEventListener("pointermove", onMove);
-        window.removeEventListener("pointerdown", onDown);
-        window.removeEventListener("pointerup", onUp);
-        document.removeEventListener("pointerover", onOver);
-        document.removeEventListener("pointerout", onOut);
         magHandlers.forEach((fn) => fn());
       });
     }
@@ -120,19 +80,6 @@ export default function Craft() {
   return (
     <>
       <div className="grain" aria-hidden="true" />
-      <div className="cursor" aria-hidden="true">
-        <svg
-          className="cursor-arrow"
-          width="22"
-          height="22"
-          viewBox="0 0 22 22"
-        >
-          <path
-            className="cursor-arrow-fill"
-            d="M0 0 L0 15.6 L4.25 11.75 L6.95 17.7 L9.55 16.45 L6.85 10.6 L12.6 10.6 Z"
-          />
-        </svg>
-      </div>
       <div className="scroll-progress" aria-hidden="true">
         <div className="scroll-progress-fill" />
       </div>
