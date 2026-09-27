@@ -28,7 +28,7 @@ export default function SiteFooter() {
             <a href="/#work">Work</a>
             <a href="/capabilities">Capabilities</a>
             <a href="/studio">Studio</a>
-            <a href="/pricing">Pricing</a>
+            <a href="/packages">Packages</a>
           </div>
           <div className="footer-col">
             <span className="footer-col-head">Studio</span>

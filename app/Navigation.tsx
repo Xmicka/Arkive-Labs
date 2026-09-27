@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 type NavTheme = "dark" | "light" | "gold";
-type Page = "home" | "start" | "studio" | "capabilities" | "pricing";
+type Page = "home" | "start" | "studio" | "capabilities" | "packages";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 function pageFromPath(pathname: string): Page {
   if (pathname.startsWith("/capabilities")) return "capabilities";
   if (pathname.startsWith("/studio")) return "studio";
-  if (pathname.startsWith("/pricing")) return "pricing";
+  if (pathname.startsWith("/packages")) return "packages";
   if (pathname.startsWith("/start-a-project")) return "start";
   return "home";
 }
@@ -113,10 +113,10 @@ export default function Navigation() {
             Studio
           </a>
           <a
-            href="/pricing"
-            aria-current={page === "pricing" ? "page" : undefined}
+            href="/packages"
+            aria-current={page === "packages" ? "page" : undefined}
           >
-            Pricing
+            Packages
           </a>
         </nav>
 
@@ -180,12 +180,12 @@ export default function Navigation() {
             Studio
           </a>
           <a
-            href="/pricing"
-            aria-current={page === "pricing" ? "page" : undefined}
+            href="/packages"
+            aria-current={page === "packages" ? "page" : undefined}
             onClick={() => setMenuOpen(false)}
           >
             <span>04</span>
-            Pricing
+            Packages
           </a>
         </div>
 

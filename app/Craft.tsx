@@ -45,38 +45,20 @@ export default function Craft() {
     // ---- Custom cursor + magnetic (fine pointers only) ----
     if (fine && !reduce) {
       document.body.classList.add("has-custom-cursor");
-      const dot = document.querySelector<HTMLElement>(".cursor-dot");
-      const ring = document.querySelector<HTMLElement>(".cursor-ring");
+      const arrow = document.querySelector<HTMLElement>(".cursor-arrow");
 
       let mx = window.innerWidth / 2;
       let my = window.innerHeight / 2;
-      let rx = mx;
-      let ry = my;
-      let prevRx = rx;
-      let prevRy = ry;
-      let angle = 0;
+      let cx = mx;
+      let cy = my;
       let raf = 0;
 
       const loop = () => {
-        // Ring trails the pointer, then deforms along its own velocity —
-        // a still circle that stretches into a gold droplet as you move.
-        rx += (mx - rx) * 0.2;
-        ry += (my - ry) * 0.2;
-        const vx = rx - prevRx;
-        const vy = ry - prevRy;
-        prevRx = rx;
-        prevRy = ry;
-        const speed = Math.hypot(vx, vy);
-        if (speed > 0.6) angle = Math.atan2(vy, vx);
-        const stretch = Math.min(speed / 22, 0.5);
-        const sx = 1 + stretch;
-        const sy = 1 - stretch * 0.62;
-
-        if (dot) dot.style.transform = `translate(${mx}px, ${my}px)`;
-        if (ring) {
-          ring.style.transform =
-            `translate(${rx}px, ${ry}px) rotate(${angle}rad) scale(${sx}, ${sy})`;
-        }
+        // Precise pointer with just a touch of easing so it feels alive
+        // without lagging behind like the old droplet.
+        cx += (mx - cx) * 0.4;
+        cy += (my - cy) * 0.4;
+        if (arrow) arrow.style.transform = `translate(${cx}px, ${cy}px)`;
         raf = requestAnimationFrame(loop);
       };
       loop();
@@ -86,6 +68,11 @@ export default function Craft() {
         my = e.clientY;
       };
       window.addEventListener("pointermove", onMove, { passive: true });
+
+      const onDown = () => document.body.classList.add("cursor-down");
+      const onUp = () => document.body.classList.remove("cursor-down");
+      window.addEventListener("pointerdown", onDown);
+      window.addEventListener("pointerup", onUp);
 
       const interactive = 'a, button, [data-magnetic], input, textarea, select, [role="button"]';
       const onOver = (e: Event) => {
@@ -124,8 +111,14 @@ export default function Craft() {
 
       cleanups.push(() => {
         cancelAnimationFrame(raf);
-        document.body.classList.remove("has-custom-cursor", "cursor-hover");
+        document.body.classList.remove(
+          "has-custom-cursor",
+          "cursor-hover",
+          "cursor-down",
+        );
         window.removeEventListener("pointermove", onMove);
+        window.removeEventListener("pointerdown", onDown);
+        window.removeEventListener("pointerup", onUp);
         document.removeEventListener("pointerover", onOver);
         document.removeEventListener("pointerout", onOut);
         magHandlers.forEach((fn) => fn());
@@ -141,8 +134,15 @@ export default function Craft() {
     <>
       <div className="grain" aria-hidden="true" />
       <div className="cursor" aria-hidden="true">
-        <div className="cursor-dot" />
-        <div className="cursor-ring" />
+        <svg className="cursor-arrow" width="26" height="26" viewBox="0 0 26 26">
+          <path
+            d="M1 1 L1 20 L6.2 15 L9.6 22.6 L13 21.1 L9.7 13.7 L17.5 13.7 Z"
+            fill="var(--gold-bright)"
+            stroke="var(--ink)"
+            strokeWidth="1.1"
+            strokeLinejoin="round"
+          />
+        </svg>
       </div>
       <div className="scroll-progress" aria-hidden="true">
         <div className="scroll-progress-fill" />
