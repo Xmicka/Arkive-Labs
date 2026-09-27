@@ -47,25 +47,13 @@ export default function Craft() {
       document.body.classList.add("has-custom-cursor");
       const arrow = document.querySelector<HTMLElement>(".cursor-arrow");
 
-      let mx = window.innerWidth / 2;
-      let my = window.innerHeight / 2;
-      let cx = mx;
-      let cy = my;
-      let raf = 0;
-
-      const loop = () => {
-        // Precise pointer with just a touch of easing so it feels alive
-        // without lagging behind like the old droplet.
-        cx += (mx - cx) * 0.4;
-        cy += (my - cy) * 0.4;
-        if (arrow) arrow.style.transform = `translate(${cx}px, ${cy}px)`;
-        raf = requestAnimationFrame(loop);
-      };
-      loop();
-
+      // Track the true pointer exactly — the arrow tip sits where clicks land.
       const onMove = (e: PointerEvent) => {
-        mx = e.clientX;
-        my = e.clientY;
+        if (arrow) {
+          arrow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+          if (!arrow.classList.contains("is-ready"))
+            arrow.classList.add("is-ready");
+        }
       };
       window.addEventListener("pointermove", onMove, { passive: true });
 
@@ -110,7 +98,6 @@ export default function Craft() {
       });
 
       cleanups.push(() => {
-        cancelAnimationFrame(raf);
         document.body.classList.remove(
           "has-custom-cursor",
           "cursor-hover",
@@ -134,13 +121,15 @@ export default function Craft() {
     <>
       <div className="grain" aria-hidden="true" />
       <div className="cursor" aria-hidden="true">
-        <svg className="cursor-arrow" width="26" height="26" viewBox="0 0 26 26">
+        <svg
+          className="cursor-arrow"
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+        >
           <path
-            d="M1 1 L1 20 L6.2 15 L9.6 22.6 L13 21.1 L9.7 13.7 L17.5 13.7 Z"
-            fill="var(--gold-bright)"
-            stroke="var(--ink)"
-            strokeWidth="1.1"
-            strokeLinejoin="round"
+            className="cursor-arrow-fill"
+            d="M0 0 L0 15.6 L4.25 11.75 L6.95 17.7 L9.55 16.45 L6.85 10.6 L12.6 10.6 Z"
           />
         </svg>
       </div>
