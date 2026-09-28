@@ -167,15 +167,25 @@ export default function HeroField() {
 
         let raf = 0;
         const start = performance.now();
-        const speed = reduce ? 0.18 : 1;
         const render = (now: number) => {
           const elapsed = (now - start) / 1000;
-          program.uniforms.uTime.value = elapsed * speed;
-          // ease the cursor swell
+          const intro = Math.min(1, elapsed / 1.1);
+          program.uniforms.uIntro.value = intro;
+
+          if (reduce) {
+            // §14: near-static field. Fade in a fixed frame, then stop moving.
+            program.uniforms.uTime.value = 6;
+            renderer.render({ scene: mesh });
+            if (intro < 1) {
+              raf = requestAnimationFrame(render);
+            }
+            return;
+          }
+
+          program.uniforms.uTime.value = elapsed;
           const m = program.uniforms.uMouse.value as InstanceType<typeof Vec2>;
           m.x += (target.x - m.x) * 0.05;
           m.y += (target.y - m.y) * 0.05;
-          program.uniforms.uIntro.value = Math.min(1, elapsed / 1.1);
           renderer.render({ scene: mesh });
           raf = requestAnimationFrame(render);
         };

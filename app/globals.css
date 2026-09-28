@@ -778,14 +778,18 @@ footer > div { display: flex; justify-content: flex-end; gap: 30px; }
     background:
       radial-gradient(circle at 83% 22%, rgba(208,169,79,0.18), transparent 31%),
       linear-gradient(125deg, rgba(9,10,12,0.76), rgba(23,25,29,0.62));
-    backdrop-filter: blur(30px) saturate(130%);
-    -webkit-backdrop-filter: blur(30px) saturate(130%);
+    backdrop-filter: blur(0px) saturate(130%);
+    -webkit-backdrop-filter: blur(0px) saturate(130%);
     color: var(--paper);
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.025);
+    transform: scale(1.03);
     pointer-events: none;
-    transition: opacity 300ms ease, visibility 300ms ease, transform 420ms cubic-bezier(.2,.8,.2,1);
+    /* §12 materialize — blur + scale arrive together, not a plain fade */
+    transition: opacity 320ms ease, visibility 320ms ease,
+      transform 480ms cubic-bezier(0.22, 1, 0.36, 1),
+      backdrop-filter 480ms cubic-bezier(0.22, 1, 0.36, 1),
+      -webkit-backdrop-filter 480ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   .mobile-navigation::before {
     content: "";
@@ -811,7 +815,7 @@ footer > div { display: flex; justify-content: flex-end; gap: 30px; }
     box-shadow: 0 0 26px rgba(224,189,103,0.8);
     pointer-events: none;
   }
-  .mobile-navigation.is-open { opacity: 1; visibility: visible; transform: scale(1); pointer-events: auto; }
+  .mobile-navigation.is-open { opacity: 1; visibility: visible; transform: scale(1); backdrop-filter: blur(30px) saturate(130%); -webkit-backdrop-filter: blur(30px) saturate(130%); pointer-events: auto; }
   .mobile-navigation-kicker { position: relative; z-index: 1; align-self: start; padding-top: 28px; }
   .mobile-navigation-kicker span { color: var(--gold-bright); font-family: var(--font-serif); font-size: 0.72rem; font-style: italic; }
   .mobile-navigation-kicker p { max-width: 240px; margin: 20px 0 0; color: #b3b2ad; font-size: 0.82rem; line-height: 1.6; }
@@ -3316,10 +3320,10 @@ footer > div a { display: inline-flex; align-items: center; min-height: 40px; }
   border-radius: 999px;
   background: var(--gold);
   box-shadow: 0 4px 16px rgba(208, 169, 79, 0.32);
-  transition: transform 360ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 0;
+  /* transform (SL↔Intl) driven by a Motion spring in PricingClient (§4);
+     defaults to the SL position (no transform), which is the initial state */
 }
-.market-control[data-market="intl"] .market-thumb { transform: translateX(100%); }
 .market-control button {
   position: relative;
   z-index: 1;
@@ -3553,3 +3557,53 @@ footer > div a { display: inline-flex; align-items: center; min-height: 40px; }
   transition: color 180ms ease;
 }
 .founder-email:hover { color: var(--paper); }
+
+/* ============================================================
+   APPLE DESIGN — PASS A (response · type detail · a11y signals)
+   Palette unchanged (ink / paper / gold). Wins the cascade.
+   ============================================================ */
+
+/* §1 Response — instant press feedback on every interactive surface.
+   The press "pushes in" the moment the pointer goes down (touch + mouse). */
+.button:active,
+.contact-button:active,
+.header-cta:active,
+.package-cta:active,
+.footer-cta:active,
+.market-control button:active,
+.support-options button:active,
+.form-submit button:active,
+.pricing-jump-nav a:active,
+.desktop-nav a:active,
+.footer-col a:active {
+  transform: scale(0.96);
+  transition: transform 90ms ease-out;
+}
+/* Keep the press honest on touch (where :hover shouldn't fire at all). */
+@media (hover: none), (pointer: coarse) {
+  .button:active, .contact-button:active, .package-cta:active,
+  .header-cta:active, .footer-cta:active { transform: scale(0.96); }
+}
+
+/* §15 Typography — use the real optical-size axis (Fraunces ships opsz). */
+body { font-optical-sizing: auto; }
+
+/* §14 Reduced transparency — make translucent chrome solid & frosted-off. */
+@media (prefers-reduced-transparency: reduce) {
+  .site-header.is-scrolled { backdrop-filter: none; }
+  .site-header.is-scrolled.nav-dark { background: rgba(9, 10, 12, 0.97); }
+  .site-header.is-scrolled.nav-light { background: rgba(242, 240, 233, 0.98); }
+  .site-header.is-scrolled.nav-gold { background: var(--gold); }
+  .market-control { background: rgba(9, 10, 12, 0.92); backdrop-filter: none; }
+  .mobile-navigation { backdrop-filter: none; }
+}
+
+/* §14 Increased contrast — near-solid surfaces with defined borders. */
+@media (prefers-contrast: more) {
+  .site-header.is-scrolled.nav-dark { background: rgba(9, 10, 12, 0.98); }
+  .site-header.is-scrolled.nav-light { background: rgba(242, 240, 233, 0.99); }
+  .site-header { border-bottom: 1px solid currentColor; }
+  .button-outline { border-color: var(--paper); }
+  .footer-cta { border-color: var(--paper); }
+  .desktop-nav a::after { height: 2px; }
+}

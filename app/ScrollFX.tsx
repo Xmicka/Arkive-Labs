@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { animate } from "motion";
 
 /**
  * Motion system:
@@ -77,13 +78,32 @@ export default function ScrollFX() {
       const hidden = els.filter(
         (el) => el.getBoundingClientRect().top > vh * 0.82,
       );
-      hidden.forEach((el) => el.classList.add("reveal-init"));
+      const done = new WeakSet<HTMLElement>();
+
+      // Hidden start state as plain inline styles (no lingering animation),
+      // so the failsafe can always force-show even if frames are throttled.
+      hidden.forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(24px)";
+        el.style.willChange = "transform, opacity";
+      });
+
+      // §4 real spring settle — critically damped (no overshoot).
+      const reveal = (el: HTMLElement) => {
+        if (done.has(el)) return;
+        done.add(el);
+        animate(
+          el,
+          { opacity: [0, 1], y: [24, 0] },
+          { type: "spring", bounce: 0, duration: 0.55 },
+        );
+      };
 
       const io = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              (entry.target as HTMLElement).classList.add("is-revealed");
+              reveal(entry.target as HTMLElement);
               io.unobserve(entry.target);
             }
           });
@@ -93,18 +113,22 @@ export default function ScrollFX() {
       hidden.forEach((el) => io.observe(el));
       cleanups.push(() => io.disconnect());
 
-      // Failsafe: never let content stay hidden.
+      // Failsafe: never let content stay hidden — set final styles directly
+      // (works even if animation frames are throttled).
       const failsafe = window.setTimeout(() => {
-        hidden.forEach((el) => el.classList.add("is-revealed"));
+        hidden.forEach((el) => {
+          if (done.has(el)) return;
+          done.add(el);
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        });
       }, 4500);
       cleanups.push(() => window.clearTimeout(failsafe));
 
       // Reveal-on-load anything already in view (belt and suspenders).
       requestAnimationFrame(() => {
         hidden.forEach((el) => {
-          if (el.getBoundingClientRect().top < vh * 0.94) {
-            el.classList.add("is-revealed");
-          }
+          if (el.getBoundingClientRect().top < vh * 0.94) reveal(el);
         });
       });
     }

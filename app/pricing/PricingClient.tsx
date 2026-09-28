@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { animate } from "motion";
 import HeroField from "../HeroField";
 
 type Market = "sl" | "intl";
@@ -335,6 +336,23 @@ const SectionHeader = ({
 export default function PricingClient() {
   const [market, setMarket] = useState<Market>("sl");
   const [activeSection, setActiveSection] = useState("projects");
+  const thumbRef = useRef<HTMLSpanElement>(null);
+
+  // §4 spring the toggle thumb — a touch of bounce because it's a deliberate flip.
+  useEffect(() => {
+    if (!thumbRef.current) return;
+    const dist = thumbRef.current.offsetWidth; // travel = one thumb width
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      thumbRef.current.style.transform =
+        market === "intl" ? `translateX(${dist}px)` : "translateX(0px)";
+      return;
+    }
+    animate(
+      thumbRef.current,
+      { x: market === "intl" ? dist : 0 },
+      { type: "spring", bounce: 0.2, duration: 0.4 },
+    );
+  }, [market]);
 
   useEffect(() => {
     const sections = navItems
@@ -392,7 +410,7 @@ export default function PricingClient() {
             role="group"
             aria-label="Select pricing market"
           >
-            <span className="market-thumb" aria-hidden="true" />
+            <span className="market-thumb" ref={thumbRef} aria-hidden="true" />
             <button
               className={market === "sl" ? "active" : ""}
               onClick={() => setMarket("sl")}
