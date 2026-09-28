@@ -1,6 +1,3 @@
-import HeroField from "./HeroField";
-import RotatingWord from "./RotatingWord";
-
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 const capabilities = [
@@ -46,46 +43,28 @@ export default function Home() {
     <main className="home">
 
       <section className="hero" id="top" data-nav-theme="dark" data-hero>
-        <HeroField />
-        <div className="hero-veil" aria-hidden="true" />
-        <div className="hero-grid" aria-hidden="true" />
+        <div className="hero-atmos" aria-hidden="true" />
 
-        <div className="hero-copy">
-          <p className="eyebrow hero-eyebrow">
-            Strategy <span>•</span> Creative <span>•</span> Technology <span>•</span> Performance
-          </p>
+        <div className="hero-inner">
+          <p className="hero-eyebrow">Founder-led studio · Sri Lanka &amp; worldwide</p>
           <h1>
-            The standard
+            Marketing,
             <br />
-            for the
-            <br />
-            <RotatingWord />
+            <em>engineered.</em>
           </h1>
-          <div className="hero-bottom">
-            <p>
-              Arkive Labs turns real business substance into clear market authority. Through
-              strategy, creative, technology and performance that move as one.
-            </p>
-            <div className="hero-actions">
-              <a className="button button-gold" href="/start-a-project" data-magnetic>
-                Start a project <Arrow />
-              </a>
-              <a className="button button-outline" href="#point-of-view" data-magnetic>
-                How we think <span aria-hidden="true">↓</span>
-              </a>
-            </div>
+          <p className="hero-lede">
+            A founder-led studio where strategy, creative and technology are built by
+            the same hands that ship them — so your brand doesn&apos;t just look the
+            part, it performs.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-gold" href="/start-a-project" data-magnetic>
+              Start a project <Arrow />
+            </a>
+            <a className="button button-outline" href="#point-of-view" data-magnetic>
+              How we work <span aria-hidden="true">↓</span>
+            </a>
           </div>
-        </div>
-
-        <div className="hero-principles">
-          <span>Research-first</span>
-          <span>Founder-led</span>
-          <span>Outcome-obsessed</span>
-        </div>
-
-        <div className="hero-scroll-cue" aria-hidden="true">
-          <span>Scroll</span>
-          <i />
         </div>
       </section>
 
@@ -334,17 +313,17 @@ export default function Home() {
         </div>
         <div className="founders">
           <article className="founder">
-            <div className="founder-monogram" aria-hidden="true"><span>YW</span><i>01</i></div>
+            <div className="founder-monogram" aria-hidden="true"><span>AC</span><i>01</i></div>
             <div className="founder-meta">
-              <div><h3>Yohan Wickramasinghe</h3><p>Co-Founder, Strategy & Creative</p></div>
-              <p>Shapes the position, story and creative system behind how Arkive and its partners show up.</p>
+              <div><h3>Akesh Chandrasiri</h3><p>Co-Founder · AI, Engineering &amp; Development</p></div>
+              <p>Leads the applied AI and builds the technology end to end — the developer behind the sites, systems and tools the work ships on, held to the same standard as everything else.</p>
             </div>
           </article>
           <article className="founder">
-            <div className="founder-monogram founder-monogram-dark" aria-hidden="true"><span>AC</span><i>02</i></div>
+            <div className="founder-monogram founder-monogram-dark" aria-hidden="true"><span>YW</span><i>02</i></div>
             <div className="founder-meta">
-              <div><h3>Akesh Chandrasiri</h3><p>Co-Founder, AI Engineering & Compliance</p></div>
-              <p>Connects applied AI, responsible technology and operational thinking to what the work can become.</p>
+              <div><h3>Yohan Wickramasinghe</h3><p>Co-Founder · Strategy &amp; Creative</p></div>
+              <p>Shapes the position, story and creative system behind how Arkive and its partners show up.</p>
             </div>
           </article>
         </div>

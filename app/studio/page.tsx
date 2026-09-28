@@ -61,19 +61,19 @@ export default function StudioPage() {
 
         <div className="founder-profile-grid">
           <article className="founder-profile">
-            <div className="founder-profile-visual" aria-hidden="true"><span>YW</span><i>01</i><b>STRATEGY / CREATIVE</b></div>
+            <div className="founder-profile-visual" aria-hidden="true"><span>AC</span><i>01</i><b>AI / ENGINEERING / DEVELOPMENT</b></div>
             <div className="founder-profile-copy">
-              <div><p>Co-Founder</p><h3>Yohan Wickramasinghe</h3><strong>Strategy & Creative</strong></div>
-              <p>Shapes the position, story and creative system behind how Arkive and its partners show up. His focus is turning business substance into a market presence people can understand, recognise and trust.</p>
-              <a className="founder-email" href="mailto:yohan@arkivelabs.com">yohan@arkivelabs.com <span aria-hidden="true">↗</span></a>
+              <div><p>Co-Founder</p><h3>Akesh Chandrasiri</h3><strong>AI, Engineering &amp; Development</strong></div>
+              <p>Leads the applied AI and builds the technology end to end — the developer behind the sites, systems and tools the work ships on. His focus is turning ideas into things that are useful, considered and ready for the realities behind them.</p>
+              <a className="founder-email" href="mailto:akesh@arkivelabs.com">akesh@arkivelabs.com <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article className="founder-profile">
-            <div className="founder-profile-visual founder-profile-dark" aria-hidden="true"><span>AC</span><i>02</i><b>AI / ENGINEERING / COMPLIANCE</b></div>
+            <div className="founder-profile-visual founder-profile-dark" aria-hidden="true"><span>YW</span><i>02</i><b>STRATEGY / CREATIVE</b></div>
             <div className="founder-profile-copy">
-              <div><p>Co-Founder</p><h3>Akesh Chandrasiri</h3><strong>AI Engineering & Compliance</strong></div>
-              <p>Connects applied AI, responsible technology and operational thinking to what the work can become. His focus is building systems that are useful, considered and ready for the realities behind the idea.</p>
-              <a className="founder-email" href="mailto:akesh@arkivelabs.com">akesh@arkivelabs.com <span aria-hidden="true">↗</span></a>
+              <div><p>Co-Founder</p><h3>Yohan Wickramasinghe</h3><strong>Strategy &amp; Creative</strong></div>
+              <p>Shapes the position, story and creative system behind how Arkive and its partners show up. His focus is turning business substance into a market presence people can understand, recognise and trust.</p>
+              <a className="founder-email" href="mailto:yohan@arkivelabs.com">yohan@arkivelabs.com <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         </div>
