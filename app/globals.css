@@ -3607,3 +3607,61 @@ body { font-optical-sizing: auto; }
   .footer-cta { border-color: var(--paper); }
   .desktop-nav a::after { height: 2px; }
 }
+
+/* ============================================================
+   APPLE — RESTRAINT PASS
+   Calm, space, deference. Remove decorative noise, add air, soften
+   structure, quiet the meta. Same palette (ink / paper / gold).
+   Appended last — wins the cascade.
+   ============================================================ */
+
+/* 1) Remove literal noise (film grain) and hero scroll-cue clutter */
+.grain { display: none !important; }
+.hero-scroll-cue { display: none !important; }
+
+/* 2) Breathing room — Apple leans on space, not density */
+:root { --section-y: 156px; }
+.section-heading { margin-bottom: 104px; }
+.pov-content { padding-top: 104px; padding-bottom: 120px; }
+.capability-row { padding: 44px 0; }
+.process-row { padding: 40px 0; }
+
+/* 3) Softer structure — hairlines recede; space does the separating */
+:root { --line: rgba(242, 240, 233, 0.09); }
+.capability-row,
+.outcome-line,
+.outcome-line > div { border-color: rgba(242, 240, 233, 0.08); }
+.point-of-view .outcome-line,
+.point-of-view .outcome-line > div { border-color: rgba(9, 10, 12, 0.08); }
+
+/* 4) Quiet the editorial meta — smaller, calmer, no heavy ringed badges */
+.section-index { gap: 14px; font-size: 0.6rem; letter-spacing: 0.2em; }
+.section-index span {
+  width: auto; height: auto;
+  border: none;
+  padding: 0;
+  font-style: normal;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-bright);
+}
+
+/* 5) Tags become quiet text, not boxed chips */
+.capability-tags { gap: 10px 20px; }
+.capability-tags span {
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: #8f8f89;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* 6) Calmer body rhythm */
+body { line-height: 1.6; }
+.heading-note { line-height: 1.7; }
+
+/* 7) Eyebrow: keep it, but quieter (less shouting) */
+.eyebrow { font-weight: 500; letter-spacing: 0.22em; color: #9a9a94; }
+.hero-eyebrow { color: var(--gold-bright); }

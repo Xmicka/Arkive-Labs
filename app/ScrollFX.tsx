@@ -84,18 +84,18 @@ export default function ScrollFX() {
       // so the failsafe can always force-show even if frames are throttled.
       hidden.forEach((el) => {
         el.style.opacity = "0";
-        el.style.transform = "translateY(24px)";
+        el.style.transform = "translateY(14px)";
         el.style.willChange = "transform, opacity";
       });
 
-      // §4 real spring settle — critically damped (no overshoot).
+      // §4 quiet spring settle — small travel, critically damped (calm, not showy).
       const reveal = (el: HTMLElement) => {
         if (done.has(el)) return;
         done.add(el);
         animate(
           el,
-          { opacity: [0, 1], y: [24, 0] },
-          { type: "spring", bounce: 0, duration: 0.55 },
+          { opacity: [0, 1], y: [14, 0] },
+          { type: "spring", bounce: 0, duration: 0.6 },
         );
       };
 
