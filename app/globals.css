@@ -3782,3 +3782,38 @@ body { line-height: 1.6; }
       linear-gradient(to top, var(--ink) 6%, rgba(9, 10, 12, 0.72) 48%, rgba(9, 10, 12, 0.24) 100%);
   }
 }
+
+/* ============================================================
+   HOME HERO — crafted kinetic entrance (masked line reveal)
+   ============================================================ */
+.hero-title { overflow: visible; }
+.hero-title .line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.hero-title .line-in { display: block; will-change: transform; }
+
+/* Crafted CSS entrance — masked line reveal + staggered rise.
+   `backwards` fill shows the hidden start only during the delay/run; the
+   resting state is the element's own (visible), so the hero can NEVER get
+   stuck hidden (no-JS, reduced-motion, or a stalled frame all end visible). */
+@media (prefers-reduced-motion: no-preference) {
+  .home .hero-title .line-in {
+    animation: hero-line-rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+  }
+  .home .hero-title .line:nth-child(2) .line-in { animation-delay: 0.22s; }
+  .home .hero-rise {
+    animation: hero-fade-rise 0.7s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  }
+  .home .hero-eyebrow.hero-rise { animation-delay: 0.05s; }
+  .home .hero-lede.hero-rise { animation-delay: 0.5s; }
+  .home .hero-actions.hero-rise { animation-delay: 0.62s; }
+}
+@keyframes hero-line-rise {
+  from { transform: translateY(115%); }
+}
+@keyframes hero-fade-rise {
+  from { opacity: 0; transform: translateY(22px); }
+}

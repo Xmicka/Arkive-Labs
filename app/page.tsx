@@ -49,18 +49,17 @@ export default function Home() {
         <div className="hero-veil" aria-hidden="true" />
 
         <div className="hero-inner">
-          <p className="hero-eyebrow">Founder-led studio · Sri Lanka &amp; worldwide</p>
-          <h1>
-            Marketing,
-            <br />
-            <em>engineered.</em>
+          <p className="hero-eyebrow hero-rise">Founder-led studio · Sri Lanka &amp; worldwide</p>
+          <h1 className="hero-title">
+            <span className="line"><span className="line-in">Marketing,</span></span>
+            <span className="line"><span className="line-in"><em>engineered.</em></span></span>
           </h1>
-          <p className="hero-lede">
+          <p className="hero-lede hero-rise">
             A founder-led studio where strategy, creative and technology are built by
             the same hands that ship them — so your brand doesn&apos;t just look the
             part, it performs.
           </p>
-          <div className="hero-actions">
+          <div className="hero-actions hero-rise">
             <a className="button button-gold" href="/start-a-project" data-magnetic>
               Start a project <Arrow />
             </a>
