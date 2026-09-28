@@ -1,3 +1,5 @@
+import HeroField from "./HeroField";
+
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 const capabilities = [
@@ -43,7 +45,8 @@ export default function Home() {
     <main className="home">
 
       <section className="hero" id="top" data-nav-theme="dark" data-hero>
-        <div className="hero-atmos" aria-hidden="true" />
+        <HeroField />
+        <div className="hero-veil" aria-hidden="true" />
 
         <div className="hero-inner">
           <p className="hero-eyebrow">Founder-led studio · Sri Lanka &amp; worldwide</p>

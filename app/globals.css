@@ -3745,3 +3745,40 @@ body { line-height: 1.6; }
   .home .hero h1 { font-size: clamp(3.2rem, 17vw, 5rem); }
   .hero-eyebrow { margin-bottom: 24px; font-size: 0.62rem; }
 }
+
+/* ============================================================
+   HOME HERO v2 — alive + powerful (interactive field, commanding type)
+   ============================================================ */
+.home .hero { background: var(--ink); }
+.home .hero .hero-field { z-index: 0; }
+.home .hero .hero-veil { z-index: 1; }
+.home .hero .hero-inner { z-index: 2; }
+/* the calm static atmos is no longer used on home */
+.home .hero .hero-atmos { display: none; }
+
+/* Commanding, powerful headline — big, heavy, tight */
+.home .hero h1 {
+  font-weight: 700;
+  font-size: clamp(4rem, 12.5vw, 11rem);
+  line-height: 0.88;
+  letter-spacing: -0.05em;
+}
+.home .hero h1 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold-bright);
+}
+/* Deepen the left so the powerful type stays crisp over the live gold field */
+.home .hero .hero-veil {
+  background:
+    linear-gradient(100deg, var(--ink) 10%, rgba(9, 10, 12, 0.62) 42%, rgba(9, 10, 12, 0) 72%),
+    linear-gradient(to top, var(--ink) 3%, transparent 34%);
+}
+@media (max-width: 640px) {
+  .home .hero h1 { font-size: clamp(3.4rem, 18vw, 5.2rem); }
+  .home .hero .hero-veil {
+    background:
+      linear-gradient(to top, var(--ink) 6%, rgba(9, 10, 12, 0.72) 48%, rgba(9, 10, 12, 0.24) 100%);
+  }
+}
