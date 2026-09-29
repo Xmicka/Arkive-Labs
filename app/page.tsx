@@ -1,4 +1,4 @@
-import HeroVortex from "./HeroVortex";
+import HeroField from "./HeroField";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -45,13 +45,13 @@ export default function Home() {
     <main className="home">
 
       <section className="hero qhero" id="top" data-nav-theme="dark" data-hero>
-        <HeroVortex />
+        <HeroField />
         <div className="qhero-veil" aria-hidden="true" />
 
         <div className="qhero-inner">
-          <p className="qhero-eyebrow hero-rise">
-            Founder-led studio · Sri Lanka &amp; worldwide
-          </p>
+          <span className="qhero-badge hero-rise">
+            <i aria-hidden="true" /> Founder-led studio · Sri Lanka &amp; worldwide
+          </span>
           <h1 className="qhero-title">
             <span className="line"><span className="line-in">Marketing and technology,</span></span>
             <span className="line"><span className="line-in"><em>engineered as one.</em></span></span>
