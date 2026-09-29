@@ -1,4 +1,4 @@
-import HeroField from "./HeroField";
+import HeroVortex from "./HeroVortex";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -44,28 +44,43 @@ export default function Home() {
   return (
     <main className="home">
 
-      <section className="hero" id="top" data-nav-theme="dark" data-hero>
-        <HeroField />
-        <div className="hero-veil" aria-hidden="true" />
+      <section className="hero qhero" id="top" data-nav-theme="dark" data-hero>
+        <HeroVortex />
+        <div className="qhero-veil" aria-hidden="true" />
 
-        <div className="hero-inner">
-          <p className="hero-eyebrow hero-rise">Founder-led studio · Sri Lanka &amp; worldwide</p>
-          <h1 className="hero-title">
-            <span className="line"><span className="line-in">Marketing,</span></span>
-            <span className="line"><span className="line-in"><em>engineered.</em></span></span>
-          </h1>
-          <p className="hero-lede hero-rise">
-            A founder-led studio where strategy, creative and technology are built by
-            the same hands that ship them — so your brand doesn&apos;t just look the
-            part, it performs.
+        <div className="qhero-inner">
+          <p className="qhero-eyebrow hero-rise">
+            Founder-led studio · Sri Lanka &amp; worldwide
           </p>
-          <div className="hero-actions hero-rise">
+          <h1 className="qhero-title">
+            <span className="line"><span className="line-in">Marketing and technology,</span></span>
+            <span className="line"><span className="line-in"><em>engineered as one.</em></span></span>
+          </h1>
+          <p className="qhero-lede hero-rise">
+            One founder-led studio for strategy, creative and engineering — so your
+            brand doesn&apos;t just look the part, it performs.
+          </p>
+          <div className="qhero-actions hero-rise">
             <a className="button button-gold" href="/start-a-project" data-magnetic>
               Start a project <Arrow />
             </a>
             <a className="button button-outline" href="#point-of-view" data-magnetic>
               How we work <span aria-hidden="true">↓</span>
             </a>
+          </div>
+        </div>
+
+        <div className="qhero-trust hero-rise" aria-label="The stack behind the work">
+          <span className="qhero-trust-label">The stack behind the work</span>
+          <div className="qhero-trust-row">
+            <span>Next.js</span>
+            <span>React</span>
+            <span>OpenAI</span>
+            <span>Claude</span>
+            <span>Figma</span>
+            <span>Vercel</span>
+            <span>Meta</span>
+            <span>Google</span>
           </div>
         </div>
       </section>
