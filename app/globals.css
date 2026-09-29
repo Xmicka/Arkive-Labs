@@ -3957,3 +3957,38 @@ body { line-height: 1.6; }
   .qhero-trust-row { gap: 10px 18px; }
   .qhero-trust-row span { font-size: 0.66rem; }
 }
+
+/* ============================================================
+   QHERO — fit & rhythm fix (compose within one screen; vortex is the star)
+   ============================================================ */
+.home .qhero { padding: 104px 6vw 116px; }
+.qhero-title {
+  font-size: clamp(2.3rem, 5.1vw, 4.8rem);
+  line-height: 1.0;
+  margin-bottom: 24px;
+}
+.qhero-eyebrow { margin-bottom: 20px; }
+.qhero-lede { margin-bottom: 32px; max-width: 540px; }
+/* let the headline wrap cleanly on small screens without the mask clipping it */
+@media (max-width: 760px) {
+  .qhero-title { font-size: clamp(2rem, 8.5vw, 3.1rem); }
+  .qhero-title .line { overflow: visible; padding-bottom: 0; margin-bottom: 0.04em; }
+}
+
+/* Beat the legacy `.home .hero h1` rule (higher specificity) on the qhero title */
+.home .qhero .qhero-title {
+  font-size: clamp(2.3rem, 5.1vw, 4.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.home .qhero .qhero-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold-bright);
+}
+@media (max-width: 760px) {
+  .home .qhero .qhero-title { font-size: clamp(2rem, 8.5vw, 3.1rem); }
+}
