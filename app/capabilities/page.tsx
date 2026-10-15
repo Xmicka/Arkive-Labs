@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Folder from "../FolderClient";
 
 export const metadata: Metadata = {
   title: "Capabilities | Arkive Labs",
@@ -156,6 +157,33 @@ export default function CapabilitiesPage() {
             <p><span>02</span>Your website, content and campaigns are telling different stories.</p>
             <p><span>03</span>You are entering a market, changing direction or preparing for a meaningful launch.</p>
             <p><span>04</span>You need senior thinking close to execution, not hidden behind layers.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="cap-page-folder" data-nav-theme="light">
+        <div className="section-index"><span>05</span><p>Inside an engagement</p></div>
+        <div className="cap-folder-wrap">
+          <div className="cap-folder-copy">
+            <h2>One folder.<br />The <em>whole system.</em></h2>
+            <p>Hover to open it. Every engagement ships a connected set of work, not a pile of disconnected deliverables.</p>
+          </div>
+          <div className="cap-folder-stage">
+            <Folder
+              color="#c79a3b"
+              paperColor="#f4f2ec"
+              size={1.15}
+              openOn="hover"
+              theme="light"
+              label="Inside an engagement"
+              items={[
+                { title: "Positioning", description: "The place you own." },
+                { title: "Messaging", description: "Words that land." },
+                { title: "Website", description: "The experience." },
+                { title: "Content system", description: "Signal that compounds." },
+                { title: "Performance loop", description: "Learning that grows." },
+              ]}
+            />
           </div>
         </div>
       </section>
