@@ -4002,20 +4002,19 @@ body { line-height: 1.6; }
 /* ============================================================
    QHERO - Noctis cinematic treatment (soft flowing gold light + badge)
    ============================================================ */
-/* Keep the live gold field visible and alive - softly focused, not a void */
-.home .qhero .hero-field {
+/* Gold-recoloured Ghost Fibers as the hero field */
+.qhero-fibers {
+  position: absolute;
+  inset: 0;
   z-index: 0;
-  filter: blur(6px) saturate(1.18) brightness(1.08);
-  transform: scale(1.12);
-  transform-origin: center 55%;
-  opacity: 1;
+  background: radial-gradient(120% 90% at 50% 38%, #141008 0%, var(--ink) 60%);
 }
-/* Legibility veil - just enough to keep the copy crisp while the gold blooms through */
+/* Legibility veil - keep the copy crisp while the fibers glow through */
 .home .qhero .qhero-veil {
   z-index: 1;
   background:
-    radial-gradient(70% 55% at 50% 46%, rgba(9,10,12,0.55), rgba(9,10,12,0.12) 62%, transparent 82%),
-    linear-gradient(to bottom, rgba(9,10,12,0.55) 0%, rgba(9,10,12,0.05) 22%, transparent 48%, rgba(9,10,12,0.35) 82%, var(--ink) 100%);
+    radial-gradient(66% 52% at 50% 46%, rgba(9,10,12,0.6), rgba(9,10,12,0.12) 62%, transparent 82%),
+    linear-gradient(to bottom, rgba(9,10,12,0.6) 0%, rgba(9,10,12,0.08) 22%, transparent 48%, rgba(9,10,12,0.4) 82%, var(--ink) 100%);
 }
 
 /* Badge pill (replaces the plain eyebrow) */

@@ -1,4 +1,4 @@
-import HeroField from "./HeroField";
+import GhostFibers from "./GhostFibers";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -58,7 +58,20 @@ export default function Home() {
     <main className="home">
 
       <section className="hero qhero" id="top" data-nav-theme="dark" data-hero>
-        <HeroField />
+        <div className="qhero-fibers" aria-hidden="true">
+          <GhostFibers
+            glowColor="#b8862f"
+            lineColor="#f0e2b6"
+            speed={0.16}
+            scale={2.2}
+            brightness={1.25}
+            glow={2}
+            vignette={0.9}
+            thickness={1}
+            waves={0.016}
+            twist={0.12}
+          />
+        </div>
         <div className="qhero-veil" aria-hidden="true" />
 
         <div className="qhero-inner">
