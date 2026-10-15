@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Signature hero visual — a gold "vortex": warped concentric rings seen in
+ * Signature hero visual - a gold "vortex": warped concentric rings seen in
  * perspective, converging to a point near the bottom centre, undulating slowly
  * like sound waves and tilting subtly toward the cursor. Ink + gold; calms to
  * near-still under reduced-motion.

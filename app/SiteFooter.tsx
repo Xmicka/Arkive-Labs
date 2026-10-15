@@ -2,7 +2,7 @@ const Arrow = () => <span aria-hidden="true">↗</span>;
 
 /**
  * Editorial site footer. Rendered once in the root layout, outside the
- * page-transition wrapper and the reveal system — so it is always present
+ * page-transition wrapper and the reveal system - so it is always present
  * and consistent on every page.
  */
 export default function SiteFooter() {
@@ -14,7 +14,7 @@ export default function SiteFooter() {
             <img src="/brand/arkive-logo-white.png" alt="Arkive Labs" />
           </a>
           <p>
-            Real business substance, turned into clear market authority —
+            Real business substance, turned into clear market authority:
             strategy, creative, technology and performance moving as one.
           </p>
           <a className="footer-cta" href="/start-a-project">

@@ -64,7 +64,7 @@ export default function StudioPage() {
             <div className="founder-profile-visual" aria-hidden="true"><span>AC</span><i>01</i><b>AI / ENGINEERING / DEVELOPMENT</b></div>
             <div className="founder-profile-copy">
               <div><p>Co-Founder</p><h3>Akesh Chandrasiri</h3><strong>AI, Engineering &amp; Development</strong></div>
-              <p>Leads the applied AI and builds the technology end to end — the developer behind the sites, systems and tools the work ships on. His focus is turning ideas into things that are useful, considered and ready for the realities behind them.</p>
+              <p>Leads the applied AI and builds the technology end to end. He&apos;s the developer behind the sites, systems and tools the work ships on. His focus is turning ideas into things that are useful, considered and ready for the realities behind them.</p>
               <a className="founder-email" href="mailto:akesh@arkivelabs.com">akesh@arkivelabs.com <span aria-hidden="true">↗</span></a>
             </div>
           </article>

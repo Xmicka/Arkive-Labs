@@ -54,7 +54,7 @@ export default function Home() {
             <span className="line"><span className="line-in"><em>engineered as one.</em></span></span>
           </h1>
           <p className="qhero-lede hero-rise">
-            One founder-led studio for strategy, creative and engineering — so your
+            One founder-led studio for strategy, creative and engineering, so your
             brand doesn&apos;t just look the part, it performs.
           </p>
           <div className="qhero-actions hero-rise">
@@ -182,13 +182,13 @@ export default function Home() {
             </p>
             <p>
               Human judgement decides what matters. The machine removes the drag between the
-              idea and the result — so the thinking stays sharp and the delivery stays fast.
+              idea and the result, so the thinking stays sharp and the delivery stays fast.
             </p>
           </div>
 
           <div className="engine-diagram" aria-hidden="true">
             <div className="engine-diagram-head">
-              <span>Fig. 02.1 — Studio system</span>
+              <span>Fig. 02.1 · Studio system</span>
               <span>v2026</span>
             </div>
             <div className="engine-cols">
@@ -330,7 +330,7 @@ export default function Home() {
             <div className="founder-monogram" aria-hidden="true"><span>AC</span><i>01</i></div>
             <div className="founder-meta">
               <div><h3>Akesh Chandrasiri</h3><p>Co-Founder · AI, Engineering &amp; Development</p></div>
-              <p>Leads the applied AI and builds the technology end to end — the developer behind the sites, systems and tools the work ships on, held to the same standard as everything else.</p>
+              <p>Leads the applied AI and builds the technology end to end. He&apos;s the developer behind the sites, systems and tools the work ships on, held to the same standard as everything else.</p>
             </div>
           </article>
           <article className="founder">

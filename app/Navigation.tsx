@@ -17,8 +17,8 @@ function pageFromPath(pathname: string): Page {
 }
 
 /**
- * Persistent, always-fixed header. Rendered once in the root layout —
- * OUTSIDE the page-transition wrapper — so it never gets captured by a
+ * Persistent, always-fixed header. Rendered once in the root layout -
+ * OUTSIDE the page-transition wrapper - so it never gets captured by a
  * transform/filter containing block and stays put while scrolling and
  * across route changes. Theme adapts to the section under it; a subtle
  * scrim appears once the page is scrolled.

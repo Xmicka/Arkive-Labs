@@ -7,7 +7,7 @@ import { animate } from "motion";
 /**
  * Motion system:
  *  - Lenis inertial smooth-scroll (the "feel").
- *  - IntersectionObserver reveals + metric count-ups — reliable, no
+ *  - IntersectionObserver reveals + metric count-ups - reliable, no
  *    scroll-position math, so nothing ever gets stuck hidden. A hard
  *    failsafe reveals everything after a few seconds regardless.
  * Fully disabled under prefers-reduced-motion (content shown as-is).
@@ -74,7 +74,7 @@ export default function ScrollFX() {
 
     if (!reduce && els.length && "IntersectionObserver" in window) {
       const vh = window.innerHeight;
-      // Only hide what starts below the fold — above-fold never flashes.
+      // Only hide what starts below the fold - above-fold never flashes.
       const hidden = els.filter(
         (el) => el.getBoundingClientRect().top > vh * 0.82,
       );
@@ -88,7 +88,7 @@ export default function ScrollFX() {
         el.style.willChange = "transform, opacity";
       });
 
-      // §4 quiet spring settle — small travel, critically damped (calm, not showy).
+      // §4 quiet spring settle - small travel, critically damped (calm, not showy).
       const reveal = (el: HTMLElement) => {
         if (done.has(el)) return;
         done.add(el);
@@ -113,7 +113,7 @@ export default function ScrollFX() {
       hidden.forEach((el) => io.observe(el));
       cleanups.push(() => io.disconnect());
 
-      // Failsafe: never let content stay hidden — set final styles directly
+      // Failsafe: never let content stay hidden - set final styles directly
       // (works even if animation frames are throttled).
       const failsafe = window.setTimeout(() => {
         hidden.forEach((el) => {

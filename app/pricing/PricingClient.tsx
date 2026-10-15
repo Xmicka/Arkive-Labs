@@ -338,7 +338,7 @@ export default function PricingClient() {
   const [activeSection, setActiveSection] = useState("projects");
   const thumbRef = useRef<HTMLSpanElement>(null);
 
-  // §4 spring the toggle thumb — a touch of bounce because it's a deliberate flip.
+  // §4 spring the toggle thumb - a touch of bounce because it's a deliberate flip.
   useEffect(() => {
     if (!thumbRef.current) return;
     const dist = thumbRef.current.offsetWidth; // travel = one thumb width

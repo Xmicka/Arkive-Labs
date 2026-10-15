@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 /**
  * Signature hero: a flowing "liquid gold" field rendered with a GLSL
  * fragment shader (domain-warped fractal noise). Molten bronze/gold veins
- * drift through darkness and swell toward the cursor. This is bespoke —
+ * drift through darkness and swell toward the cursor. This is bespoke -
  * not a stock particle system. Falls back to a static CSS gradient if
  * WebGL is unavailable or motion is reduced.
  */
@@ -53,7 +53,7 @@ const fragment = /* glsl */ `
 
     float t = uTime * 0.045;
 
-    // domain warping — the molten flow
+    // domain warping - the molten flow
     vec2 q = vec2(fbm(p * 1.6 + t), fbm(p * 1.6 + vec2(5.2, 1.3) - t));
     vec2 r = vec2(
       fbm(p * 1.6 + 2.0 * q + vec2(1.7, 9.2) + 0.15 * t),
@@ -67,7 +67,7 @@ const fragment = /* glsl */ `
     f += glow * 0.10;
     f = clamp(f, 0.0, 1.0);
 
-    // push most of the field into shadow — gold lives only at the crests
+    // push most of the field into shadow - gold lives only at the crests
     f = pow(f, 2.6);
 
     // ink -> deep bronze -> gold ramp
@@ -210,7 +210,7 @@ export default function HeroField() {
           if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
         };
       } catch {
-        // WebGL unavailable — CSS fallback gradient stays visible.
+        // WebGL unavailable - CSS fallback gradient stays visible.
         host.classList.add("is-fallback");
       }
     })();

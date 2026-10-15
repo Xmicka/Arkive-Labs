@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://arkivelabs.com"),
   title: "Arkive Labs | The standard for the bold",
   description:
-    "Arkive Labs turns real business substance into clear market authority — strategy, creative, technology and performance that move as one. Founder-led, research-first.",
+    "Arkive Labs turns real business substance into clear market authority: strategy, creative, technology and performance that move as one. Founder-led, research-first.",
   keywords: [
     "Arkive Labs",
     "brand strategy",

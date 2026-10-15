@@ -4,7 +4,7 @@ import HeroField from "../HeroField";
 export const metadata: Metadata = {
   title: "Packages | Arkive Labs",
   description:
-    "Ways to work with Arkive Labs — engagements shaped around your ambition, from establishing your first signal to running a category-leading marketing operation.",
+    "Ways to work with Arkive Labs: engagements shaped around your ambition, from establishing your first signal to running a category-leading marketing operation.",
 };
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -34,7 +34,7 @@ const packages: Array<{
     name: "Ascend",
     tagline: "Build real momentum.",
     promise:
-      "For brands ready to scale. Strategy, SEO, paid media and content stop competing and start compounding — one connected system pulling in the same direction.",
+      "For brands ready to scale. Strategy, SEO, paid media and content stop competing and start compounding, one connected system pulling in the same direction.",
     items: [
       "Static and motion creative every month",
       "Full technical, on-page and off-page SEO",
@@ -96,7 +96,7 @@ export default function Packages() {
           <p className="packages-hero-lead">
             Whether you are finding your first signal or scaling a
             category-leading operation, there is a way in that fits. Each
-            package is a starting point — we shape the details around what you
+            package is a starting point. We shape the details around what you
             actually need.
           </p>
           <div className="packages-hero-actions">
@@ -126,7 +126,7 @@ export default function Packages() {
           <p className="heading-note">
             Retained engagements for brands that want a partner in the work, not
             a vendor on the sidelines. Pick the one that sounds like where you
-            are — we will refine it together.
+            are. We will refine it together.
           </p>
         </div>
 
@@ -155,7 +155,7 @@ export default function Packages() {
         </div>
 
         <p className="package-note">
-          Investment is shaped to your goals and shared on our first call — no
+          Investment is shaped to your goals and shared on our first call. No
           rigid tiers, no pressure. Just the right scope for what you are trying
           to move.
         </p>

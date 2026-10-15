@@ -43,7 +43,7 @@ export default function Craft() {
     }
 
     // ---- Magnetic buttons (fine pointers only) ----
-    // Uses the native system cursor — reliable and familiar for clicking.
+    // Uses the native system cursor - reliable and familiar for clicking.
     if (fine && !reduce) {
       const magnets = Array.from(
         document.querySelectorAll<HTMLElement>("[data-magnetic]"),

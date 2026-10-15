@@ -466,7 +466,7 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--line);
 }
 
-/* Clean, elegant hover — no boxy highlight; only the title + arrow respond.
+/* Clean, elegant hover - no boxy highlight; only the title + arrow respond.
    Gated so touch taps don't trigger a stuck state. */
 @media (hover: hover) and (pointer: fine) {
   .capability-row h3,
@@ -791,7 +791,7 @@ footer > div { display: flex; justify-content: flex-end; gap: 30px; }
     visibility: hidden;
     transform: scale(1.03);
     pointer-events: none;
-    /* §12 materialize — blur + scale arrive together, not a plain fade */
+    /* §12 materialize - blur + scale arrive together, not a plain fade */
     transition: opacity 320ms ease, visibility 320ms ease,
       transform 480ms cubic-bezier(0.22, 1, 0.36, 1),
       backdrop-filter 480ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -2670,7 +2670,7 @@ footer > div { display: flex; justify-content: flex-end; gap: 30px; }
   }
 }
 /* ============================================================
-   ARKIVE — CRAFT LAYER (merged from the editorial static build)
+   ARKIVE - CRAFT LAYER (merged from the editorial static build)
    Brand type · interactive hero · custom cursor · grain · motion
    Appended last so it wins the cascade.
    ============================================================ */
@@ -2780,7 +2780,7 @@ h1 em, h2 em, h3 em,
 @media (max-width: 900px) { .hero-scroll-cue { display: none; } }
 
 /* ---------- Cursor ----------
-   Native system cursor — reliable and familiar. Interactive elements show
+   Native system cursor - reliable and familiar. Interactive elements show
    the hand pointer so what's clickable is always obvious. */
 a,
 button,
@@ -2978,7 +2978,7 @@ button:disabled,
 }
 
 /* ============================================================
-   ARKIVE — WOW LAYER
+   ARKIVE - WOW LAYER
    Smooth scroll · shader hero · page transitions · refined weight
    ============================================================ */
 
@@ -2988,7 +2988,7 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: clip; }
 
-/* ---- Page transition shell (opacity only — keeps fixed nav intact) ---- */
+/* ---- Page transition shell (opacity only - keeps fixed nav intact) ---- */
 .route-shell { animation: route-in 620ms cubic-bezier(0.22, 1, 0.36, 1) both; }
 @keyframes route-in {
   from { opacity: 0; filter: blur(7px); }
@@ -3108,7 +3108,7 @@ footer > div a:hover { color: var(--gold-bright); }
 .metric-value em { font-style: normal; }
 
 /* ============================================================
-   ARKIVE — POLISH LAYER (production pass)
+   ARKIVE - POLISH LAYER (production pass)
    Alignment · weight · spacing · mobile · a11y. Wins the cascade.
    ============================================================ */
 
@@ -3165,7 +3165,7 @@ footer > div a:hover { color: var(--gold-bright); }
 /* ============ MOBILE / RESPONSIVE ============ */
 body { overflow-x: clip; }
 
-/* Gate hover-expansions behind real hover pointers — kills touch h-scroll */
+/* Gate hover-expansions behind real hover pointers - kills touch h-scroll */
 @media (hover: none), (pointer: coarse) {
   .capability-row:hover, .project-row:hover, .addon-row:hover {
     margin: 0; padding-left: 0; padding-right: 0; background: transparent;
@@ -3207,7 +3207,7 @@ body { overflow-x: clip; }
 footer > div a { display: inline-flex; align-items: center; min-height: 40px; }
 
 /* ============================================================
-   ARKIVE — SITE FOOTER (single, editorial, always present)
+   ARKIVE - SITE FOOTER (single, editorial, always present)
    ============================================================ */
 .site-footer {
   display: block;
@@ -3292,7 +3292,7 @@ footer > div a { display: inline-flex; align-items: center; min-height: 40px; }
 }
 
 /* ============================================================
-   ARKIVE — PRICING HERO (signature shader + sliding market toggle)
+   ARKIVE - PRICING HERO (signature shader + sliding market toggle)
    ============================================================ */
 .pricing-hero .hero-field { z-index: 0; }
 .pricing-hero-veil {
@@ -3344,7 +3344,7 @@ footer > div a { display: inline-flex; align-items: center; min-height: 40px; }
 }
 
 /* ============================================================
-   ARKIVE — PACKAGES PAGE
+   ARKIVE - PACKAGES PAGE
    ============================================================ */
 .packages-hero {
   position: relative;
@@ -3565,11 +3565,11 @@ footer > div a { display: inline-flex; align-items: center; min-height: 40px; }
 .founder-email:hover { color: var(--paper); }
 
 /* ============================================================
-   APPLE DESIGN — PASS A (response · type detail · a11y signals)
+   APPLE DESIGN - PASS A (response · type detail · a11y signals)
    Palette unchanged (ink / paper / gold). Wins the cascade.
    ============================================================ */
 
-/* §1 Response — instant press feedback on every interactive surface.
+/* §1 Response - instant press feedback on every interactive surface.
    The press "pushes in" the moment the pointer goes down (touch + mouse). */
 .button:active,
 .contact-button:active,
@@ -3591,10 +3591,10 @@ footer > div a { display: inline-flex; align-items: center; min-height: 40px; }
   .header-cta:active, .footer-cta:active { transform: scale(0.96); }
 }
 
-/* §15 Typography — use the real optical-size axis (Fraunces ships opsz). */
+/* §15 Typography - use the real optical-size axis (Fraunces ships opsz). */
 body { font-optical-sizing: auto; }
 
-/* §14 Reduced transparency — make translucent chrome solid & frosted-off. */
+/* §14 Reduced transparency - make translucent chrome solid & frosted-off. */
 @media (prefers-reduced-transparency: reduce) {
   .site-header.is-scrolled { backdrop-filter: none; }
   .site-header.is-scrolled.nav-dark { background: rgba(9, 10, 12, 0.97); }
@@ -3604,7 +3604,7 @@ body { font-optical-sizing: auto; }
   .mobile-navigation { backdrop-filter: none; }
 }
 
-/* §14 Increased contrast — near-solid surfaces with defined borders. */
+/* §14 Increased contrast - near-solid surfaces with defined borders. */
 @media (prefers-contrast: more) {
   .site-header.is-scrolled.nav-dark { background: rgba(9, 10, 12, 0.98); }
   .site-header.is-scrolled.nav-light { background: rgba(242, 240, 233, 0.99); }
@@ -3615,24 +3615,24 @@ body { font-optical-sizing: auto; }
 }
 
 /* ============================================================
-   APPLE — RESTRAINT PASS
+   APPLE - RESTRAINT PASS
    Calm, space, deference. Remove decorative noise, add air, soften
    structure, quiet the meta. Same palette (ink / paper / gold).
-   Appended last — wins the cascade.
+   Appended last - wins the cascade.
    ============================================================ */
 
 /* 1) Remove literal noise (film grain) and hero scroll-cue clutter */
 .grain { display: none !important; }
 .hero-scroll-cue { display: none !important; }
 
-/* 2) Breathing room — Apple leans on space, not density */
+/* 2) Breathing room - Apple leans on space, not density */
 :root { --section-y: 156px; }
 .section-heading { margin-bottom: 104px; }
 .pov-content { padding-top: 104px; padding-bottom: 120px; }
 .capability-row { padding: 44px 0; }
 .process-row { padding: 40px 0; }
 
-/* 3) Softer structure — hairlines recede; space does the separating */
+/* 3) Softer structure - hairlines recede; space does the separating */
 :root { --line: rgba(242, 240, 233, 0.09); }
 .capability-row,
 .outcome-line,
@@ -3640,7 +3640,7 @@ body { font-optical-sizing: auto; }
 .point-of-view .outcome-line,
 .point-of-view .outcome-line > div { border-color: rgba(9, 10, 12, 0.08); }
 
-/* 4) Quiet the editorial meta — smaller, calmer, no heavy ringed badges */
+/* 4) Quiet the editorial meta - smaller, calmer, no heavy ringed badges */
 .section-index { gap: 14px; font-size: 0.6rem; letter-spacing: 0.2em; }
 .section-index span {
   width: auto; height: auto;
@@ -3673,7 +3673,7 @@ body { line-height: 1.6; }
 .hero-eyebrow { color: var(--gold-bright); }
 
 /* ============================================================
-   HOME HERO — calm & bold (Apple-style), lavish gold atmosphere
+   HOME HERO - calm & bold (Apple-style), lavish gold atmosphere
    Replaces the busy shader. Same palette.
    ============================================================ */
 .home .hero {
@@ -3700,7 +3700,7 @@ body { line-height: 1.6; }
   content: "";
   position: absolute;
   inset: 0;
-  /* lavish vignette — deepen the edges around the light */
+  /* lavish vignette - deepen the edges around the light */
   background: radial-gradient(125% 100% at 66% 34%, transparent 48%, rgba(0, 0, 0, 0.55));
 }
 @keyframes hero-breathe {
@@ -3753,7 +3753,7 @@ body { line-height: 1.6; }
 }
 
 /* ============================================================
-   HOME HERO v2 — alive + powerful (interactive field, commanding type)
+   HOME HERO v2 - alive + powerful (interactive field, commanding type)
    ============================================================ */
 .home .hero { background: var(--ink); }
 .home .hero .hero-field { z-index: 0; }
@@ -3762,7 +3762,7 @@ body { line-height: 1.6; }
 /* the calm static atmos is no longer used on home */
 .home .hero .hero-atmos { display: none; }
 
-/* Commanding, powerful headline — big, heavy, tight */
+/* Commanding, powerful headline - big, heavy, tight */
 .home .hero h1 {
   font-weight: 700;
   font-size: clamp(4rem, 12.5vw, 11rem);
@@ -3790,7 +3790,7 @@ body { line-height: 1.6; }
 }
 
 /* ============================================================
-   HOME HERO — crafted kinetic entrance (masked line reveal)
+   HOME HERO - crafted kinetic entrance (masked line reveal)
    ============================================================ */
 .hero-title { overflow: visible; }
 .hero-title .line {
@@ -3801,7 +3801,7 @@ body { line-height: 1.6; }
 }
 .hero-title .line-in { display: block; will-change: transform; }
 
-/* Crafted CSS entrance — masked line reveal + staggered rise.
+/* Crafted CSS entrance - masked line reveal + staggered rise.
    `backwards` fill shows the hidden start only during the delay/run; the
    resting state is the element's own (visible), so the hero can NEVER get
    stuck hidden (no-JS, reduced-motion, or a stalled frame all end visible). */
@@ -3825,7 +3825,7 @@ body { line-height: 1.6; }
 }
 
 /* ============================================================
-   HOME HERO — Qronos-style: centered, gold vortex, two-tone, trust strip
+   HOME HERO - Qronos-style: centered, gold vortex, two-tone, trust strip
    Same palette (ink / paper / gold).
    ============================================================ */
 .home .qhero {
@@ -3965,7 +3965,7 @@ body { line-height: 1.6; }
 }
 
 /* ============================================================
-   QHERO — fit & rhythm fix (compose within one screen; vortex is the star)
+   QHERO - fit & rhythm fix (compose within one screen; vortex is the star)
    ============================================================ */
 .home .qhero { padding: 104px 6vw 116px; }
 .qhero-title {
@@ -4000,9 +4000,9 @@ body { line-height: 1.6; }
 }
 
 /* ============================================================
-   QHERO — Noctis cinematic treatment (soft flowing gold light + badge)
+   QHERO - Noctis cinematic treatment (soft flowing gold light + badge)
    ============================================================ */
-/* Keep the live gold field visible and alive — softly focused, not a void */
+/* Keep the live gold field visible and alive - softly focused, not a void */
 .home .qhero .hero-field {
   z-index: 0;
   filter: blur(6px) saturate(1.18) brightness(1.08);
@@ -4010,7 +4010,7 @@ body { line-height: 1.6; }
   transform-origin: center 55%;
   opacity: 1;
 }
-/* Legibility veil — just enough to keep the copy crisp while the gold blooms through */
+/* Legibility veil - just enough to keep the copy crisp while the gold blooms through */
 .home .qhero .qhero-veil {
   z-index: 1;
   background:
