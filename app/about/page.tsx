@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Studio | Arkive Labs",
+  title: "About | Arkive Labs",
   description:
     "Meet the founders behind Arkive Labs and the principles that keep strategy, creative and technology close to the work.",
 };
@@ -15,7 +15,7 @@ const operatingPrinciples = [
   ["04", "Accountable outcomes", "The work is judged by the clarity, authority or movement it creates for the business."],
 ];
 
-export default function StudioPage() {
+export default function AboutPage() {
   return (
     <main className="studio-page">
 

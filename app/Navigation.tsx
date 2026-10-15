@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 type NavTheme = "dark" | "light" | "gold";
-type Page = "home" | "start" | "studio" | "capabilities" | "packages";
+type Page = "home" | "start" | "about" | "capabilities" | "packages" | "faq";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 function pageFromPath(pathname: string): Page {
   if (pathname.startsWith("/capabilities")) return "capabilities";
-  if (pathname.startsWith("/studio")) return "studio";
+  if (pathname.startsWith("/about")) return "about";
+  if (pathname.startsWith("/faq")) return "faq";
   if (pathname.startsWith("/packages")) return "packages";
   if (pathname.startsWith("/start-a-project")) return "start";
   return "home";
@@ -107,10 +108,10 @@ export default function Navigation() {
             Capabilities
           </a>
           <a
-            href="/studio"
-            aria-current={page === "studio" ? "page" : undefined}
+            href="/about"
+            aria-current={page === "about" ? "page" : undefined}
           >
-            Studio
+            About
           </a>
           <a
             href="/packages"
@@ -172,12 +173,12 @@ export default function Navigation() {
             Capabilities
           </a>
           <a
-            href="/studio"
-            aria-current={page === "studio" ? "page" : undefined}
+            href="/about"
+            aria-current={page === "about" ? "page" : undefined}
             onClick={() => setMenuOpen(false)}
           >
             <span>03</span>
-            Studio
+            About
           </a>
           <a
             href="/packages"
@@ -186,6 +187,14 @@ export default function Navigation() {
           >
             <span>04</span>
             Packages
+          </a>
+          <a
+            href="/faq"
+            aria-current={page === "faq" ? "page" : undefined}
+            onClick={() => setMenuOpen(false)}
+          >
+            <span>05</span>
+            FAQ
           </a>
         </div>
 

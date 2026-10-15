@@ -322,7 +322,7 @@ export default function Home() {
               The people shaping the strategy stay close to the creative, technology and delivery.
             </p>
             <p>No hand-off into a maze of layers. No distance between the promise and the work.</p>
-            <a className="studio-page-link" href="/studio">Meet the studio <Arrow /></a>
+            <a className="studio-page-link" href="/about">Meet the founders <Arrow /></a>
           </div>
         </div>
         <div className="founders">
