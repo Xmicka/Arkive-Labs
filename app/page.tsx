@@ -2,6 +2,19 @@ import HeroField from "./HeroField";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
+const stackTools = [
+  "Next.js",
+  "React",
+  "OpenAI",
+  "Claude",
+  "Figma",
+  "Vercel",
+  "Meta",
+  "Google",
+  "TypeScript",
+  "GSAP",
+];
+
 const capabilities = [
   {
     number: "01",
@@ -69,15 +82,12 @@ export default function Home() {
 
         <div className="qhero-trust hero-rise" aria-label="The stack behind the work">
           <span className="qhero-trust-label">The stack behind the work</span>
-          <div className="qhero-trust-row">
-            <span>Next.js</span>
-            <span>React</span>
-            <span>OpenAI</span>
-            <span>Claude</span>
-            <span>Figma</span>
-            <span>Vercel</span>
-            <span>Meta</span>
-            <span>Google</span>
+          <div className="qhero-marquee">
+            <div className="qhero-marquee-track" aria-hidden="true">
+              {[...stackTools, ...stackTools].map((tool, i) => (
+                <span key={`${tool}-${i}`}>{tool}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
