@@ -4147,6 +4147,66 @@ body { line-height: 1.6; }
 }
 
 /* ============================================================
+   ETHOS STATEMENT BAND (Text Loop)
+   ============================================================ */
+.ethos {
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(96px, 15vh, 160px) 6vw;
+  text-align: center;
+  border-top: 1px solid rgba(242, 240, 233, 0.06);
+}
+.ethos-kicker {
+  margin: 0 0 26px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #8a8a84;
+}
+.ethos-line {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.32em;
+  justify-content: center;
+  align-items: baseline;
+  font-size: clamp(2rem, 5.4vw, 4.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+.ethos-rotate {
+  display: inline-block;
+  height: 1.25em;
+  overflow: hidden;
+  vertical-align: bottom;
+  color: var(--gold-bright);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+}
+.ethos-rotate-track {
+  display: flex;
+  flex-direction: column;
+  animation: ethos-words 10s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+.ethos-rotate-track span {
+  height: 1.25em;
+  line-height: 1.25em;
+  white-space: nowrap;
+}
+@keyframes ethos-words {
+  0%, 22%   { transform: translateY(0); }
+  28%, 55%  { transform: translateY(-1.25em); }
+  61%, 88%  { transform: translateY(-2.5em); }
+  94%, 100% { transform: translateY(-3.75em); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ethos-rotate-track { animation: none; }
+}
+
+/* ============================================================
    HERO STACK MARQUEE (infinite "slider", LogoLoop-style)
    ============================================================ */
 .qhero-marquee {

@@ -105,6 +105,21 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="ethos" data-nav-theme="dark">
+        <p className="ethos-kicker">What we are here to do</p>
+        <h2 className="ethos-line">
+          <span>We make brands</span>
+          <span className="ethos-rotate" aria-label="impossible to ignore, copy or forget">
+            <span className="ethos-rotate-track" aria-hidden="true">
+              <span>impossible to ignore.</span>
+              <span>impossible to copy.</span>
+              <span>impossible to forget.</span>
+              <span>impossible to ignore.</span>
+            </span>
+          </span>
+        </h2>
+      </section>
+
       <section className="point-of-view" id="point-of-view" data-nav-theme="light">
         <div className="section-index">
           <span>01</span>
