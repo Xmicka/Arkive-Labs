@@ -95,7 +95,7 @@ export default function AboutPage() {
                 strapColor="#c79a3b"
                 strapWidth={0.62}
                 metal="gold"
-                size={0.85}
+                size={0.75}
                 finish="glossy"
               />
             </div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
                 strapColor="#8a8f98"
                 strapWidth={0.62}
                 metal="silver"
-                size={0.85}
+                size={0.75}
                 finish="glossy"
               />
             </div>
