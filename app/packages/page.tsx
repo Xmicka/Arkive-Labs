@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HoloCard from "../HoloCard";
 import HeroField from "../HeroField";
 
 export const metadata: Metadata = {
@@ -132,9 +133,9 @@ export default function Packages() {
 
         <div className="package-grid">
           {packages.map((pkg) => (
-            <article
-              className={`package-card${pkg.featured ? " featured" : ""}`}
+            <HoloCard
               key={pkg.name}
+              className={`package-card${pkg.featured ? " featured" : ""}`}
             >
               {pkg.featured && <span className="package-flag">Most chosen</span>}
               <div className="package-head">
@@ -150,7 +151,7 @@ export default function Packages() {
               <a className="package-cta" href="/start-a-project">
                 {pkg.cta} <Arrow />
               </a>
-            </article>
+            </HoloCard>
           ))}
         </div>
 

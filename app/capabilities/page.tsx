@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Folder from "../FolderClient";
+import CapabilityCarousel from "../CapabilityCarousel";
+import GhostFibers from "../GhostFibers";
 
 export const metadata: Metadata = {
   title: "Capabilities | Arkive Labs",
@@ -63,22 +65,25 @@ export default function CapabilitiesPage() {
     <main className="capabilities-page">
 
       <section className="cap-page-hero" id="top" data-nav-theme="dark" data-hero>
-        <div className="cap-page-hero-grid" aria-hidden="true" />
+        <div className="cap-hero-fibers" aria-hidden="true">
+          <GhostFibers
+            glowColor="#b8862f"
+            lineColor="#f0e2b6"
+            speed={0.14}
+            scale={2.5}
+            rotation={0.6}
+            brightness={1.2}
+            glow={2}
+            vignette={0.92}
+            waves={0.018}
+            twist={0.14}
+          />
+        </div>
+        <div className="cap-hero-veil" aria-hidden="true" />
         <div className="cap-page-hero-copy">
           <p className="eyebrow">Capabilities <span>•</span> One connected system</p>
           <h1>Built around<br />the movement<br /><em>you need.</em></h1>
           <p>We connect strategy, creative, technology and performance around the business decision that matters next.</p>
-        </div>
-        <div className="cap-page-system" aria-hidden="true">
-          <div className="cap-system-ring cap-system-ring-one" />
-          <div className="cap-system-ring cap-system-ring-two" />
-          <div className="cap-system-axis axis-horizontal" />
-          <div className="cap-system-axis axis-vertical" />
-          <span className="cap-node node-strategy">Strategy</span>
-          <span className="cap-node node-digital">Digital</span>
-          <span className="cap-node node-content">Content</span>
-          <span className="cap-node node-growth">Growth</span>
-          <div className="cap-system-core"><img src="/brand/arkive-mark-black.png" alt="" /></div>
         </div>
         <div className="cap-page-principles"><span>Position before promotion</span><span>Systems over fragments</span><span>Learning over guessing</span></div>
       </section>
@@ -107,27 +112,7 @@ export default function CapabilitiesPage() {
           <p>Each can solve a focused problem. Together, they create a system that carries the strategy all the way into market response.</p>
         </div>
 
-        <div className="cap-discipline-list">
-          {disciplines.map((discipline) => (
-            <article className="cap-discipline" key={discipline.number}>
-              <div className="cap-discipline-top">
-                <span>{discipline.number}</span>
-                <p>{discipline.name}</p>
-              </div>
-              <div className={`cap-discipline-visual cap-visual-${discipline.visual}`} aria-hidden="true">
-                <i /><i /><i /><i /><b>{discipline.number}</b>
-              </div>
-              <div className="cap-discipline-copy">
-                <h3>{discipline.statement}</h3>
-                <p>{discipline.description}</p>
-                <div className="cap-includes">
-                  {discipline.includes.map((item) => <span key={item}>{item}</span>)}
-                </div>
-                <strong><small>Designed outcome</small>{discipline.outcome}</strong>
-              </div>
-            </article>
-          ))}
-        </div>
+        <CapabilityCarousel items={disciplines} />
       </section>
 
       <section className="cap-page-pathways" data-nav-theme="light">
@@ -166,13 +151,20 @@ export default function CapabilitiesPage() {
         <div className="cap-folder-wrap">
           <div className="cap-folder-copy">
             <h2>One folder.<br />The <em>whole system.</em></h2>
-            <p>Hover to open it. Every engagement ships a connected set of work, not a pile of disconnected deliverables.</p>
+            <p>Every engagement ships as one connected set of work, not a pile of disconnected deliverables. Hover the folder to open it.</p>
+            <ul className="cap-folder-list">
+              <li><span>01</span><strong>Positioning</strong><em>The place you own.</em></li>
+              <li><span>02</span><strong>Messaging</strong><em>Words that land.</em></li>
+              <li><span>03</span><strong>Website</strong><em>The experience.</em></li>
+              <li><span>04</span><strong>Content system</strong><em>Signal that compounds.</em></li>
+              <li><span>05</span><strong>Performance loop</strong><em>Learning that grows.</em></li>
+            </ul>
           </div>
           <div className="cap-folder-stage">
             <Folder
               color="#c79a3b"
               paperColor="#f4f2ec"
-              size={1.15}
+              size={1.25}
               openOn="hover"
               theme="light"
               label="Inside an engagement"

@@ -119,6 +119,12 @@ export default function Navigation() {
           >
             Packages
           </a>
+          <a
+            href="/faq"
+            aria-current={page === "faq" ? "page" : undefined}
+          >
+            FAQ
+          </a>
         </nav>
 
         <a

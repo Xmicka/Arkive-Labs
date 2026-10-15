@@ -1,4 +1,5 @@
 import GhostFibers from "./GhostFibers";
+import TextRibbon from "./TextRibbon";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -92,32 +93,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-        <div className="qhero-trust hero-rise" aria-label="The stack behind the work">
-          <span className="qhero-trust-label">The stack behind the work</span>
-          <div className="qhero-marquee">
-            <div className="qhero-marquee-track" aria-hidden="true">
-              {[...stackTools, ...stackTools].map((tool, i) => (
-                <span key={`${tool}-${i}`}>{tool}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ethos" data-nav-theme="dark">
-        <p className="ethos-kicker">What we are here to do</p>
-        <h2 className="ethos-line">
-          <span>We make brands</span>
-          <span className="ethos-rotate" aria-label="impossible to ignore, copy or forget">
-            <span className="ethos-rotate-track" aria-hidden="true">
-              <span>impossible to ignore.</span>
-              <span>impossible to copy.</span>
-              <span>impossible to forget.</span>
-              <span>impossible to ignore.</span>
-            </span>
-          </span>
-        </h2>
       </section>
 
       <section className="point-of-view" id="point-of-view" data-nav-theme="light">
@@ -326,6 +301,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="stack-band" data-nav-theme="dark" aria-label="The stack behind the work">
+        <span className="stack-band-label">The stack behind the work</span>
+        <TextRibbon
+          text={stackTools.join("     ✦     ")}
+          shape="wave"
+          curviness={10}
+          speed={50}
+          fontSize={30}
+          fontWeight={600}
+          letterSpacing={2}
+          uppercase={false}
+          color="#e0bd67"
+          ribbon={false}
+          pauseOnHover
+          className="stack-band-ribbon"
+        />
+      </section>
+
       <section className="approach" id="approach" data-nav-theme="dark">
         <div className="section-heading dark-heading">
           <div className="section-index">
@@ -365,14 +358,12 @@ export default function Home() {
         </div>
         <div className="founders">
           <article className="founder">
-            <div className="founder-monogram" aria-hidden="true"><span>AC</span><i>01</i></div>
             <div className="founder-meta">
               <div><h3>Akesh Chandrasiri</h3><p>Co-Founder · AI, Engineering &amp; Development</p></div>
               <p>Leads the applied AI and builds the technology end to end. He&apos;s the developer behind the sites, systems and tools the work ships on, held to the same standard as everything else.</p>
             </div>
           </article>
           <article className="founder">
-            <div className="founder-monogram founder-monogram-dark" aria-hidden="true"><span>YW</span><i>02</i></div>
             <div className="founder-meta">
               <div><h3>Yohan Wickramasinghe</h3><p>Co-Founder · Strategy &amp; Creative</p></div>
               <p>Shapes the position, story and creative system behind how Arkive and its partners show up.</p>
