@@ -4500,7 +4500,7 @@ body { line-height: 1.6; }
   color: var(--gold-bright);
 }
 
-/* reactbits TextLoop ribbon — full-width "stack behind the work" band */
+/* reactbits TextLoop ribbon - full-width "stack behind the work" band */
 .stack-band {
   padding: 68px 0 76px;
   background: var(--ink);
@@ -4560,7 +4560,7 @@ body { line-height: 1.6; }
 }
 
 /* ============================================================
-   QA FIXES PASS — alignment, whitespace, mobile responsiveness
+   QA FIXES PASS - alignment, whitespace, mobile responsiveness
    ============================================================ */
 
 /* #3 Home founders: reserve 2 lines for the name so the two columns' roles align */

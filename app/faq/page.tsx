@@ -15,7 +15,7 @@ const faqGroups = [
     items: [
       {
         q: "Who will I actually be working with?",
-        a: "The founders, directly. Every engagement is led by Akesh and Yohan — the people who shape the recommendation stay in the room through delivery. No account manager relaying briefs to a team you never meet.",
+        a: "The founders, directly. Every engagement is led by Akesh and Yohan. The people who shape the recommendation stay in the room through delivery. No account manager relaying briefs to a team you never meet.",
       },
       {
         q: "How quickly can we get started?",
@@ -37,15 +37,15 @@ const faqGroups = [
     items: [
       {
         q: "Why aren’t your prices on the site?",
-        a: "Because the right scope depends on your goals, not a tier someone picked for you. We shape the investment around what will actually move your business and share it on our first call — no rigid packages, no pressure.",
+        a: "Because the right scope depends on your goals, not a tier someone picked for you. We shape the investment around what will actually move your business and share it on our first call. No rigid packages, no pressure.",
       },
       {
         q: "Do you take on one-off projects, or only ongoing retainers?",
-        a: "Both. Some brands come to us for a defined project — a site, a positioning sprint, a launch. Others want a founder-led partner in the work month to month. We’ll recommend the shape that fits where you are.",
+        a: "Both. Some brands come to us for a defined project: a site, a positioning sprint, a launch. Others want a founder-led partner in the work month to month. We’ll recommend the shape that fits where you are.",
       },
       {
         q: "What kind of businesses do you work with?",
-        a: "Ambitious brands that have something real to build on and want it expressed with authority — from finding their first signal to leading a category.",
+        a: "Ambitious brands that have something real to build on and want it expressed with authority, from finding their first signal to leading a category.",
       },
     ],
   },
@@ -55,7 +55,7 @@ const faqGroups = [
     items: [
       {
         q: "What makes Arkive different from a typical agency?",
-        a: "Strategy, creative, technology and performance live under one roof here. Nothing gets lost in the handoff between a strategy deck, a design team and a dev shop — because it’s the same people the whole way through.",
+        a: "Strategy, creative, technology and performance live under one roof here. Nothing gets lost in the handoff between a strategy deck, a design team and a dev shop, because it’s the same people the whole way through.",
       },
       {
         q: "Who owns the work you create?",
