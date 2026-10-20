@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "FAQ | Arkive Labs",
   description:
     "Straight answers on working with Arkive Labs: who you work with, how fast we start, how we scope and price, and what to expect on the first call.",
+  alternates: { canonical: "/faq" },
 };
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -65,9 +66,25 @@ const faqGroups = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqGroups.flatMap((group) =>
+    group.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    }))
+  ),
+};
+
 export default function FaqPage() {
   return (
     <main className="faq-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       <section className="faq-hero" id="top" data-nav-theme="dark" data-hero>
         <div className="faq-hero-grid" aria-hidden="true" />

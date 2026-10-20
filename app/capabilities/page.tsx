@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Capabilities | Arkive Labs",
   description:
     "Explore Arkive Labs capabilities across strategy, digital experiences, content systems and performance growth.",
+  alternates: { canonical: "/capabilities" },
 };
 
 const Arrow = () => <span aria-hidden="true">↗</span>;

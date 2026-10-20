@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Packages | Arkive Labs",
   description:
     "Ways to work with Arkive Labs: engagements shaped around your ambition, from establishing your first signal to running a category-leading marketing operation.",
+  alternates: { canonical: "/packages" },
 };
 
 const Arrow = () => <span aria-hidden="true">↗</span>;

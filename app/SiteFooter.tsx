@@ -30,6 +30,7 @@ export default function SiteFooter() {
             <a href="/about">About</a>
             <a href="/packages">Packages</a>
             <a href="/faq">FAQ</a>
+            <a href="/contact">Contact</a>
           </div>
           <div className="footer-col">
             <span className="footer-col-head">Contact</span>
@@ -60,6 +61,7 @@ export default function SiteFooter() {
 
       <div className="footer-base">
         <span>© 2026 Arkive Labs</span>
+        <a href="/privacy">Privacy</a>
         <span className="footer-base-tag">One team. Every channel. No limits.</span>
         <a href="#top">Back to top ↑</a>
       </div>
