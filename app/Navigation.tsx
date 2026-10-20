@@ -125,6 +125,7 @@ export default function Navigation() {
           >
             FAQ
           </a>
+          <a href="https://blog.arkivelabs.com">Blog</a>
         </nav>
 
         <a
@@ -201,6 +202,10 @@ export default function Navigation() {
           >
             <span>05</span>
             FAQ
+          </a>
+          <a href="https://blog.arkivelabs.com" onClick={() => setMenuOpen(false)}>
+            <span>06</span>
+            Blog
           </a>
         </div>
 

@@ -843,6 +843,7 @@ footer > div { display: flex; justify-content: flex-end; gap: 30px; }
     .mobile-navigation.is-open .mobile-navigation-links a:nth-child(3) { animation-delay: 150ms; }
     .mobile-navigation.is-open .mobile-navigation-links a:nth-child(4) { animation-delay: 190ms; }
     .mobile-navigation.is-open .mobile-navigation-links a:nth-child(5) { animation-delay: 230ms; }
+    .mobile-navigation.is-open .mobile-navigation-links a:nth-child(6) { animation-delay: 270ms; }
   }
   @media (prefers-reduced-motion: reduce) {
     .mobile-navigation-links a { opacity: 1; transform: none; }

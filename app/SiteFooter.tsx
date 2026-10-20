@@ -30,6 +30,7 @@ export default function SiteFooter() {
             <a href="/about">About</a>
             <a href="/packages">Packages</a>
             <a href="/faq">FAQ</a>
+            <a href="https://blog.arkivelabs.com">Blog</a>
             <a href="/contact">Contact</a>
           </div>
           <div className="footer-col">
