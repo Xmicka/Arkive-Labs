@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Craft from "./Craft";
 import ScrollFX from "./ScrollFX";
@@ -177,6 +178,7 @@ export default function RootLayout({
         {children}
         <SiteFooter />
       </body>
+      <GoogleAnalytics gaId="G-EWTVMEY1RL" />
     </html>
   );
 }
