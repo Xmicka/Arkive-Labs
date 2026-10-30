@@ -140,13 +140,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google AdSense — ownership verification + ad serving */}
-        <meta name="google-adsense-account" content="ca-pub-6711834888023238" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6711834888023238"
-          crossOrigin="anonymous"
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
