@@ -4620,3 +4620,28 @@ body { line-height: 1.6; }
   .legal-hero { padding: 120px 20px 68px; }
   .contact-detail, .legal-body { padding: 56px 20px 72px; }
 }
+
+/* ============================================================
+   INSIGHTS / FROM THE BLOG (links to blog.arkivelabs.com)
+   ============================================================ */
+.insights { padding: 96px 4vw 104px; background: var(--paper); color: var(--ink); border-top: 1px solid rgba(9,10,12,0.1); }
+.insights-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin: 38px 0 42px; flex-wrap: wrap; }
+.insights-head h2 { margin: 0; font-size: clamp(2.2rem, 4.4vw, 4rem); line-height: 1.02; letter-spacing: -0.04em; font-weight: 700; }
+.insights-head h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: #806523; }
+.insights-all { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #806523; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(9,10,12,0.12); border: 1px solid rgba(9,10,12,0.12); }
+.insight-card { display: flex; flex-direction: column; gap: 12px; padding: 30px 28px 26px; background: var(--paper); text-decoration: none; color: var(--ink); min-height: 236px; transition: background 0.3s cubic-bezier(0.23,1,0.32,1); }
+.insight-kicker { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #a98a3e; }
+.insight-card h3 { margin: 0; font-size: 1.16rem; line-height: 1.25; letter-spacing: -0.01em; font-weight: 600; transition: color 0.3s ease; }
+.insight-card p { margin: 0; flex: 1; color: #5c5d58; font-size: 0.92rem; line-height: 1.56; }
+.insight-more { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #806523; display: inline-flex; align-items: center; gap: 6px; }
+@media (hover: hover) and (pointer: fine) {
+  .insight-card:hover { background: #f6f4ee; }
+  .insight-card:hover h3 { color: #806523; }
+}
+@media (max-width: 900px) { .insights-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) {
+  .insights { padding: 64px 20px 72px; }
+  .insights-grid { grid-template-columns: 1fr; }
+  .insight-card { min-height: 0; }
+}

@@ -16,6 +16,39 @@ const stackTools = [
   "GSAP",
 ];
 
+const insights = [
+  {
+    url: "https://blog.arkivelabs.com/blog/chatgpt-vs-claude-for-youtube-scripts/",
+    title: "ChatGPT vs Claude for YouTube scripts, tested side by side",
+    desc: "The same prompt through both models, with each opening fact-checked against a real source.",
+  },
+  {
+    url: "https://blog.arkivelabs.com/blog/how-i-use-chatgpt-and-claude-to-write-client-proposals/",
+    title: "How we use AI to write client proposals",
+    desc: "A repeatable workflow with a worked example, and the edits that stop it sounding like a template.",
+  },
+  {
+    url: "https://blog.arkivelabs.com/blog/ai-workflow-for-planning-a-month-of-linkedin-posts/",
+    title: "A simple AI workflow for a month of LinkedIn posts",
+    desc: "Plan twelve posts without inventing results, using a prompt that forces real material.",
+  },
+  {
+    url: "https://blog.arkivelabs.com/blog/how-to-fact-check-ai-written-content/",
+    title: "How to fact-check AI-written content before you publish",
+    desc: "A simple process for listing every claim and checking it, with a real example.",
+  },
+  {
+    url: "https://blog.arkivelabs.com/blog/why-blockbuster-lost-to-netflix/",
+    title: "Why Blockbuster lost to Netflix: what the record shows",
+    desc: "The popular story is tidy. The reporting is more complicated, and late fees matter.",
+  },
+  {
+    url: "https://blog.arkivelabs.com/blog/how-to-write-a-case-study-when-you-have-no-clients/",
+    title: "How to write a case study when you have no clients",
+    desc: "Build an honest portfolio piece with a clearly labelled example brief, not invented results.",
+  },
+];
+
 const capabilities = [
   {
     number: "01",
@@ -380,6 +413,24 @@ export default function Home() {
           <p>Strategy, creative and technology in one room.</p>
           <p>Research that sharpens decisions, not decks that gather dust.</p>
           <p>Work judged by what it moves, not only what it ships.</p>
+        </div>
+      </section>
+
+      <section className="insights" data-nav-theme="light">
+        <div className="section-index"><span>07</span><p>From the blog</p></div>
+        <div className="insights-head">
+          <h2>Thinking, <em>in the open.</em></h2>
+          <a className="insights-all" href="https://blog.arkivelabs.com">Read the blog <Arrow /></a>
+        </div>
+        <div className="insights-grid">
+          {insights.map((post) => (
+            <a className="insight-card" href={post.url} key={post.url}>
+              <span className="insight-kicker">Article</span>
+              <h3>{post.title}</h3>
+              <p>{post.desc}</p>
+              <span className="insight-more">Read <Arrow /></span>
+            </a>
+          ))}
         </div>
       </section>
 
