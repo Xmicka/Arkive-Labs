@@ -30,7 +30,7 @@ export default function SiteFooter() {
             <a href="/about">About</a>
             <a href="/packages">Packages</a>
             <a href="/faq">FAQ</a>
-            <a href="https://blog.arkivelabs.com">Blog</a>
+            <a href="/blog">Blog</a>
             <a href="/contact">Contact</a>
           </div>
           <div className="footer-col">
@@ -63,6 +63,7 @@ export default function SiteFooter() {
       <div className="footer-base">
         <span>© 2026 Arkive Labs</span>
         <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
         <span className="footer-base-tag">One team. Every channel. No limits.</span>
         <a href="#top">Back to top ↑</a>
       </div>
